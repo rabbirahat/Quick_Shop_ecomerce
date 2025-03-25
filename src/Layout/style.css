@@ -1,0 +1,11 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+@theme {
+  --color-success: #16C79A;
+}
+
+
+.link-hover {
+  @apply cursor-pointer hover:no-underline hover:text-success translate-y-0  duration-300;
+}

@@ -31,31 +31,31 @@ export const router = createBrowserRouter([
         element: <About />,
       },
       {
-        path: "login",
+        path: "/login",
         element: <Login />,
       },
       {
-        path: "signup",
+        path: "/signup",
         element: <Signup />,
       },
       {
-        path: "checkout",
+        path: "/checkout",
         element: <Checkout />,
       },
       {
-        path: "contact",
+        path: "/contact",
         element: <Contact />,
       },
       {
-        path: "not-found",
+        path: "/not-found",
         element: <NotFound />,
       },
       {
-        path: "productList",
+        path: "/productList",
         element: <ProductsList />,
       },
       {
-        path: "Menu",
+        path: "/Menu",
         element: <Menu />,
       },
     ],
