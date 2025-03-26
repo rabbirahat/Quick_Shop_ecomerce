@@ -1,0 +1,143 @@
+[
+    {
+      "id": 1,
+      "badge": "Hot",
+      "category": "Hodo Foods",
+      "title": "All Natural Italian-Style Chicken Meatballs",
+      "rating": 3.5,
+      "brand": "Stouffer",
+      "price": 52.85,
+      "oldPrice": 55.8,
+      "images": {
+        "default": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-2-1.jpg",
+        "hover": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-2-2.jpg"
+      }
+    },
+    {
+      "id": 2,
+      "badge": "Sale",
+      "category": "Hodo Foods",
+      "title": "Angie’s Boomchickapop Sweet & Salty Kettle Corn",
+      "rating": 3.5,
+      "brand": "StarKist",
+      "price": 52.85,
+      "oldPrice": 55.8,
+      "images": {
+        "default": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-3-1.jpg",
+        "hover": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-3-2.jpg"
+      }
+    },
+    {
+      "id": 3,
+      "badge": "",
+      "category": "Vegetables",
+      "title": "Foster Farms Takeout Crispy Classic Buffalo Wings",
+      "rating": 3.5,
+      "brand": "Nestfood",
+      "price": 52.85,
+      "oldPrice": 55.8,
+      "images": {
+        "default": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-4-1.jpg",
+        "hover": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-4-2.jpg"
+      }
+    },
+    {
+      "id": 4,
+      "badge": "-10%",
+      "category": "Pet Foods",
+      "title": "Blue Diamond Almonds Lightly Salted Vegetables",
+      "rating": 3.5,
+      "brand": "Stouffer",
+      "price": 52.85,
+      "oldPrice": 55.8,
+      "images": {
+        "default": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-5-1.jpg",
+        "hover": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-5-2.jpg"
+      }
+    },
+    {
+      "id": 5,
+      "badge": "",
+      "category": "Snack",
+      "title": "Seeds of Change Organic Quinoa, Brown, & Red Rice",
+      "rating": 4.0,
+      "brand": "NestFood",
+      "price": 28.85,
+      "oldPrice": 32.8,
+      "images": {
+        "default": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-1-1.jpg",
+        "hover": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-1-2.jpg"
+      }
+    },
+    {
+        "id": 6,
+        "badge": "Sale",
+        "category": "Hodo Foods",
+        "title": "Angie’s Boomchickapop Sweet & Salty Kettle Corn",
+        "rating": 3.5,
+        "brand": "StarKist",
+        "price": 52.85,
+        "oldPrice": 55.8,
+        "images": {
+          "default": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-3-1.jpg",
+          "hover": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-3-2.jpg"
+        }
+      },
+      {
+        "id": 7,
+        "badge": "",
+        "category": "Vegetables",
+        "title": "Foster Farms Takeout Crispy Classic Buffalo Wings",
+        "rating": 3.5,
+        "brand": "Nestfood",
+        "price": 52.85,
+        "oldPrice": 55.8,
+        "images": {
+          "default": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-4-1.jpg",
+          "hover": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-4-2.jpg"
+        }
+      },
+      {
+        "id": 8,
+        "badge": "-10%",
+        "category": "Pet Foods",
+        "title": "Blue Diamond Almonds Lightly Salted Vegetables",
+        "rating": 3.5,
+        "brand": "Stouffer",
+        "price": 52.85,
+        "oldPrice": 55.8,
+        "images": {
+          "default": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-5-1.jpg",
+          "hover": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-5-2.jpg"
+        }
+      },
+      {
+        "id": 4,
+        "badge": "-10%",
+        "category": "Pet Foods",
+        "title": "Blue Diamond Almonds Lightly Salted Vegetables",
+        "rating": 3.5,
+        "brand": "Stouffer",
+        "price": 52.85,
+        "oldPrice": 55.8,
+        "images": {
+          "default": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-5-1.jpg",
+          "hover": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-5-2.jpg"
+        }
+      },
+      {
+        "id": 5,
+        "badge": "",
+        "category": "Snack",
+        "title": "Seeds of Change Organic Quinoa, Brown, & Red Rice",
+        "rating": 4.0,
+        "brand": "NestFood",
+        "price": 28.85,
+        "oldPrice": 32.8,
+        "images": {
+          "default": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-1-1.jpg",
+          "hover": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-1-2.jpg"
+        }
+      }
+  ]
+  
