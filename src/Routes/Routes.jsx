@@ -12,6 +12,10 @@ import Login from "../Pages/Login/Login";
 import Signup from "../Pages/Signup/Signup";
 import Menu from "../Pages/Menu/Menu";
 import Dashboard from "../Pages/Dashboard/Dashboard";
+import TrackYourOrder from "../Pages/Dashboard/TrackYourOrder";
+import MyAddress from "../Pages/Dashboard/MyAddress";
+import MyOrders from "../Pages/Dashboard/MyOrders";
+import AccountDetails from "../Pages/Dashboard/AccountDetails";
 
 export const router = createBrowserRouter([
   {
@@ -55,44 +59,35 @@ export const router = createBrowserRouter([
         element: <ProductsList />,
       },
       {
-        path: "/Menu",
+        path: "/menu",
         element: <Menu />,
+      },
+      {
+        path: "/dashboard",
+        element: <Dashboard />,
+        children: [
+          {
+            path: "trackorder",
+            element: <TrackYourOrder />,
+          },
+          {
+            path: "myaddress",
+            element: <MyAddress />,
+          },
+          {
+            path: "myorders",
+            element: <MyOrders />,
+          },
+          {
+            path: "accountdetails",
+            element: <AccountDetails />,
+          },
+        ],
       },
     ],
   },
-  // {
-  //   path: "dashboard",
-  //   element: <Dashboard></Dashboard>,
-  //   children: [
-  //     {
-  //       path: "userhome",
-  //       element: <UserHome></UserHome>,
-  //     },
-  //     {
-  //       path: "my-cart",
-  //       element: <MyCart />,
-  //     },
-  //     {
-  //       path: "payment",
-  //       element: <Payment></Payment>,
-  //     },
-  //     // admin routes
-  //     {
-  //       path: "adminhome",
-  //       element: <AdminHome></AdminHome>,
-  //     },
-  //     {
-  //       path: "allusers",
-  //       element: <AllUsers></AllUsers>,
-  //     },
-  //     {
-  //       path: "addMenu",
-  //       element: <AddItem></AddItem>,
-  //     },
-  //     {
-  //       path: "manageitems",
-  //       element: <ManageItems></ManageItems>,
-  //     },
-  //   ],
-  // },
+  {
+    path: "*",
+    element: <NotFound />,
+  },
 ]);
