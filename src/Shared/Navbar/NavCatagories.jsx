@@ -30,7 +30,7 @@ const navLinks = [
 
 // Pages Dropdown Links
 const pages = [
-  { path: "/blog", name: "Blogs" },
+  { path: "/blogs", name: "Blogs" },
   { path: "/about", name: "About Me" },
   { path: "/contact", name: "Contact Us" },
   { path: "/login", name: "Login" },
@@ -89,12 +89,13 @@ const NavCategories = () => {
             </button>
             <ul className="absolute left-0 w-[230px] bg-white rounded-md z-50 p-2 shadow-md hidden group-hover:block border">
               {pages.map((page, index) => (
-                <li
+                <Link
+                  to={page.path}
+                  className="block px-4 py-2 hover:bg-gray-100 font-medium"
                   key={index}
-                  className="px-4 py-2 hover:bg-gray-100 font-medium"
                 >
-                  <Link to={page.path}>{page.name}</Link>
-                </li>
+                  {page.name}
+                </Link>
               ))}
             </ul>
           </div>
