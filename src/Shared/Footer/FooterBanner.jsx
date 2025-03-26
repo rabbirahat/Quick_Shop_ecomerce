@@ -12,7 +12,7 @@ const FooterTopBanner = () => {
                         <p className="text-textBody font-semibold font-main text-xl mt-10">Start You'r Daily Shopping with <span className="text-[#3BB77E]">Quick Shop</span></p>
                         <div className="flex mt-10">
                             <input className="w-full outline-success bg-white rounded-l-full px-5 font-main" type="email" name="email" placeholder="Your Email Address" />
-                            <button className="bg-[#3BB77E] px-4 py-3 rounded-r-full text-white font-main font-bold">Subscribe</button>
+                            <button className="bg-[#3BB77E] btn-hover px-4 py-3 rounded-r-full text-white font-main font-bold">Subscribe</button>
                         </div>
                     </div>
                 </div>

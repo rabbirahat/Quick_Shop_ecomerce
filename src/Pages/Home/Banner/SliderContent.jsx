@@ -24,7 +24,7 @@ const SliderContent = ({ activeIndex, slides }) => {
                                 placeholder="Your email address"
                                 className="px-4 py-3 bg-white rounded-full shadow-md w-64 sm:w-80 focus:outline-none"
                             />
-                            <button className="ml-4 bg-success text-white px-6 py-3 rounded-full shadow-md">
+                            <button className="ml-4 bg-success btn-hover text-white px-6 py-3 rounded-full shadow-md">
                                 Subscribe
                             </button>
                         </div>

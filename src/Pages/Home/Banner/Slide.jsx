@@ -12,7 +12,7 @@ const Slide = ({ slide, isActive }) => {
               src="https://i.ibb.co/mNtrQ4d/icon-email-2-svg.png"
               alt="email"
             />
-            <button className="subscribe-button">Subscribe</button>
+            <button className="subscribe-button btn-hover">Subscribe</button>
           </div>
         </div>
       </div>
