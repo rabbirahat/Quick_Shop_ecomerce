@@ -5,11 +5,14 @@ import { Link } from 'react-router-dom';
 import { BsFacebook, BsMessenger, BsTelephone } from 'react-icons/bs';
 import { AiOutlineInstagram, AiOutlineTwitter } from 'react-icons/ai';
 import { FaYoutube } from 'react-icons/fa';
+import FooterTopBanner from './FooterBanner';
+import logo from '../..//assets/QS_LOGO.png';
 
 // Contact Information Section
 const ContactInfo = () => (
+
   <div className="max-w-sm pr-6">
-    <img src="https://i.ibb.co/f9VXHJ7/Logo.png" alt="logo" className="mb-2" />
+    <img src={logo} alt="logo" className="mb-2" />
     <p className="mb-2">Pellentesque posuere orci lobortis</p>
     <ul className="space-y-1">
       <li>
@@ -81,8 +84,8 @@ const AppAndPayment = () => (
 const SocialMediaAndContact = () => (
   <div className="flex flex-col md:flex-row justify-between pb-10">
     <div className="text-center md:text-left">
-      <p>© 2022, Deciders Ecommerce</p>
-      <p>Designed by <span className="text-brand1">Deciders Team</span> All rights reserved</p>
+      <p>© 2025, Quick Shop</p>
+      <p>Designed by <span className="text-brand1">Team Crafter</span> All rights reserved</p>
     </div>
 
     <div className="flex flex-col items-center md:items-start mt-4 md:mt-0">
@@ -113,6 +116,7 @@ const SocialMediaAndContact = () => (
 const Footer = () => {
   return (
     <footer className="w-full">
+      <FooterTopBanner />
       <div className="pt-8 px-4 md:px-8">
         <div className="flex flex-wrap justify-between gap-8">
           <ContactInfo />
