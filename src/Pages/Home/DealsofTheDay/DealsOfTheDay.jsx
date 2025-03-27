@@ -32,7 +32,7 @@ const DealsOfTheDays = () => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5 ">
-        {products.map((product) => (
+        {products.slice(0, 4).map((product) => (
           <DealsCard key={product.id} product={product} />
         ))}
       </div>

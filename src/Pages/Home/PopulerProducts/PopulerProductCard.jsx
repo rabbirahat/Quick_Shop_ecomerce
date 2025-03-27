@@ -30,7 +30,7 @@ const PopulerProductCard = ({ productData }) => {
   }
 
   return (
-    <div className="max-w-sm border border-[#BCE3C9] rounded-lg overflow-hidden group mx-auto">
+    <div className="max-w-xm border border-[#BCE3C9] rounded-lg overflow-hidden group mx-auto">
       <p className="mt-2 mb-3 text-[#FFF]">
         <small
           className={`${getBadgeColor(productData.badge)} text-center px-4 py-1 rounded-r-full text-white`}
