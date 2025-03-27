@@ -10,7 +10,7 @@ const PromotionCard = ({card}) => {
         <h3 className="text-[24px] font-bold text-[#253D4E] hover:-translate-y-3 duration-500 min-h-[100px]">
           {card.title}
         </h3>
-        <button className="bg-[#3BB77E] flex items-center text-white px-3 py-1 rounded my-4 btn-hover">
+        <button className="bg-success flex items-center text-white px-3 py-1 rounded my-4 btn-hover">
           <p className="font-[12px] ">Shop Now</p>
           <FaArrowRight className="m-2 p=2" />
         </button>

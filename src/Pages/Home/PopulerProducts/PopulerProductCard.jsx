@@ -1,4 +1,4 @@
-import { Rating } from "@smastrom/react-rating";
+import { Rating, Star } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
 import {
   AiOutlineHeart,
@@ -11,17 +11,23 @@ const PopulerProductCard = ({ productData }) => {
   // Logic for determining the badge color
   const getBadgeColor = (badge) => {
     if (badge === "Hot") {
-      return "bg-success"; // Apply bg-success for Hot badge
+      return "bg-success"; 
     } else if (badge === "Sale") {
-      return "bg-brand2"; // Apply bg-brand2 for Sale badge
-    } else if (badge.includes("%")) {
-      return "bg-red-400"; // Apply bg-red-400 for percentage badge (like 50%)
+      return "bg-brand2"; 
+    } else if (badge.includes("%")) {// If the badge contains a percentage
+      return "bg-red-400"; 
     } else if (badge === "") {
-      return ""; // If the badge is empty string, return an empty string for no color
+      return ""; 
     } else {
-      return ""; // Default case for no badge color
+      return ""; 
     }
   };
+
+  const RatingStyles = {
+    itemShapes: Star,
+    activeFillColor: '#ffb700',
+    inactiveFillColor: '#ddd',
+  }
 
   return (
     <div className="max-w-sm border border-[#BCE3C9] rounded-lg overflow-hidden group mx-auto">
@@ -65,16 +71,17 @@ const PopulerProductCard = ({ productData }) => {
         <p className="text-textBody hover:text-[#3BB77E]">
           <small>{productData.category}</small>
         </p>
-        <p className="heading-sm hover:text-[#3BB77E]">
+        <p className="heading-sm hover:text-[#191b1a]">
           {productData.title}
         </p>
         <div className="flex items-center text-warning gap-1 mt-2">
           <Rating
-            style={{ maxWidth: 180 }}
+            style={{ maxWidth: 100 }}
             value={productData.rating}
+            itemStyles={RatingStyles}
             readOnly
           />
-          <span className="text-textBody">(4.0)</span>
+          <span className="text-textBody">({productData.rating})</span>
         </div>
         <p>
           By <span className="text-[#3BB77E]">{productData.brand}</span>
