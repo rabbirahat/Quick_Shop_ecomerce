@@ -1,9 +1,6 @@
 import { Rating, Star } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
-import {
-  AiOutlineHeart,
-  AiOutlineShoppingCart,
-} from "react-icons/ai";
+import { AiOutlineHeart, AiOutlineShoppingCart } from "react-icons/ai";
 import { FiEye } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
@@ -11,29 +8,32 @@ const PopulerProductCard = ({ productData }) => {
   // Logic for determining the badge color
   const getBadgeColor = (badge) => {
     if (badge === "Hot") {
-      return "bg-success"; 
+      return "bg-success";
     } else if (badge === "Sale") {
-      return "bg-brand2"; 
-    } else if (badge.includes("%")) {// If the badge contains a percentage
-      return "bg-red-400"; 
+      return "bg-brand2";
+    } else if (badge.includes("%")) {
+      // If the badge contains a percentage
+      return "bg-red-400";
     } else if (badge === "") {
-      return ""; 
+      return "";
     } else {
-      return ""; 
+      return "";
     }
   };
 
   const RatingStyles = {
     itemShapes: Star,
-    activeFillColor: '#ffb700',
-    inactiveFillColor: '#ddd',
-  }
+    activeFillColor: "#ffb700",
+    inactiveFillColor: "#ddd",
+  };
 
   return (
     <div className="max-w-xm border border-[#BCE3C9] rounded-lg overflow-hidden group mx-auto">
       <p className="mt-2 mb-3 text-[#FFF]">
         <small
-          className={`${getBadgeColor(productData.badge)} text-center px-4 py-1 rounded-r-full text-white`}
+          className={`${getBadgeColor(
+            productData.badge
+          )} text-center px-4 py-1 rounded-r-full text-white`}
         >
           {productData.badge}
         </small>
@@ -71,9 +71,12 @@ const PopulerProductCard = ({ productData }) => {
         <p className="text-textBody hover:text-[#3BB77E]">
           <small>{productData.category}</small>
         </p>
-        <p className="heading-sm hover:text-[#191b1a]">
-          {productData.title}
-        </p>
+        <Link
+          to={`/product/${productData.id}`}
+          className=""
+        >
+          <p className="heading-sm link-hover">{productData.title}</p>
+        </Link>
         <div className="flex items-center text-warning gap-1 mt-2">
           <Rating
             style={{ maxWidth: 100 }}

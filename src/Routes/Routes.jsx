@@ -16,6 +16,7 @@ import TrackYourOrder from "../Pages/Dashboard/TrackYourOrder";
 import MyAddress from "../Pages/Dashboard/MyAddress";
 import MyOrders from "../Pages/Dashboard/MyOrders";
 import AccountDetails from "../Pages/Dashboard/AccountDetails";
+import ProductDetails from "../Pages/ProductDetails/ProductDetails";
 
 export const router = createBrowserRouter([
   {
@@ -57,6 +58,10 @@ export const router = createBrowserRouter([
       {
         path: "/productList",
         element: <ProductsList />,
+      },
+      {
+        path: "/product/:id",
+        element: <ProductDetails />,
       },
       {
         path: "/menu",
