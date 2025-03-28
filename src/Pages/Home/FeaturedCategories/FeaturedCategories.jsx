@@ -14,18 +14,22 @@ const FeaturedCategories = () => {
   const size = useWindowSize();
 
   const promotionCardInfo = [
-    {title: "Everyday Fresh & Clean with Our Products",
-      bgurl:"url('http://wp.alithemes.com/html/nest/demo/assets/imgs/banner/banner-1.png')"
+    {
+      title: "Everyday Fresh & Clean with Our Products",
+      bgurl:
+        "url('http://wp.alithemes.com/html/nest/demo/assets/imgs/banner/banner-1.png')",
     },
-    {title: "Make your Breakfast Healthy and Easy",
-      bgurl:"url('http://wp.alithemes.com/html/nest/demo/assets/imgs/banner/banner-2.png')"
+    {
+      title: "Make your Breakfast Healthy and Easy",
+      bgurl:
+        "url('http://wp.alithemes.com/html/nest/demo/assets/imgs/banner/banner-2.png')",
     },
-    {title: "The best Organic Products Online",
-      bgurl:"url('http://wp.alithemes.com/html/nest/demo/assets/imgs/banner/banner-3.png')"
+    {
+      title: "The best Organic Products Online",
+      bgurl:
+        "url('http://wp.alithemes.com/html/nest/demo/assets/imgs/banner/banner-3.png')",
     },
   ];
-
-
 
   const CategoriInfo = [
     {
@@ -88,11 +92,11 @@ const FeaturedCategories = () => {
   return (
     <section>
       {/* Featured Categories Header */}
-      <div className="container flex justify-between items-center mt-4">
-        <h1 className="font-bold text-[32px] text-[#253D4E]">
+      <div className="block md:flex flex-cols-1 justify-between text-center items-center lg:flex-cols-2 md:mb-1 pb-10">
+        <h1 className="text-4xl text-[#253D4E] font-bold my-4">
           Featured Categories
         </h1>
-        <ul className="flex text-[16px] text-textBody font-normal gap-4">
+        <ul className="flex gap-5 md:justify-end justify-center flex-wrap text-lg">
           <li className="link-hover font-medium">
             <a href="/">All</a>
           </li>
@@ -112,7 +116,7 @@ const FeaturedCategories = () => {
       </div>
 
       {/* Featured Categories Slider */}
-      <div>
+      <div className="mt-4">
         <Slider {...settings}>
           {CategoriInfo.map((card, index) => (
             <div key={index}>
