@@ -6,7 +6,6 @@ import Checkout from "../Pages/Checkout/Checkout";
 import Contact from "../Pages/Contact/Contact";
 import MyCart from "../Pages/MyCart/MyCart";
 import NotFound from "../Pages/NotFound/NotFound";
-import ProductsList from "../Pages/Menu/Menu";
 import About from "../Pages/About/About";
 import Login from "../Pages/Login/Login";
 import Signup from "../Pages/Signup/Signup";
@@ -55,10 +54,7 @@ export const router = createBrowserRouter([
         path: "/not-found",
         element: <NotFound />,
       },
-      {
-        path: "/productList",
-        element: <ProductsList />,
-      },
+
       {
         path: "/product/:id",
         element: <ProductDetails />,
