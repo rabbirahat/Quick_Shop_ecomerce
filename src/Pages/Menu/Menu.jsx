@@ -1,6 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import FilterSidebar from "./FilterSidebar/FilterSidebar";
+import ProductCard from "./ProductGrid/ProductCard";
+import header_blog from "../../assets/blogs/header-blog.png"
+
 
 
 
@@ -13,30 +16,14 @@ const Menu = () => {
     inStock: false,
   });
 
-  const products = [
-    {
-      id: "1",
-      title: "Seeds of Change Organic Quinoa",
-      price: 2.51,
-      originalPrice: 3.99,
-      rating: 4.5,
-      reviews: 32,
-      image: "/lovable-uploads/product1.png",
-      badge: "Sale",
-      category: "Seeds"
-    },
-    {
-      id: "2",
-      title: "Blue Diamond Almonds",
-      price: 2.33,
-      originalPrice: 3.99,
-      rating: 4.2,
-      reviews: 16,
-      image: "/lovable-uploads/product2.png",
-      badge: "Sale",
-      category: "Nuts"
-    },
-  ];
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    fetch("products.json")
+      .then((res) => res.json())
+      .then((data) => {
+        setProducts(data);
+      });
+  },[]);
 
   const popularItems = [
     
@@ -67,7 +54,7 @@ const Menu = () => {
         ],
       },
       {
-        id: 19,
+        id: 20,
         badge: "Hot",
         category: "Hodo Foods",
         title: "Organic Turkey Breast",
@@ -97,7 +84,7 @@ const Menu = () => {
   return (
     <div className="flex flex-col min-h-screen bg-white">
       {/* Category Hero Section */}
-      <div className="bg-green-50 py-8">
+       <div className="bg-green-50 py-8" style={{ backgroundImage: `url(${header_blog})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <div className="container mx-auto px-4">
           <h1 className="text-3xl font-bold text-gray-800 mb-2">Vegetables & Tubers</h1>
           <div className="flex items-center text-sm text-gray-500">
@@ -110,8 +97,8 @@ const Menu = () => {
 
       {/* Main Content */}
       <main className="container mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Sidebar */}
+        <div className="flex flex-col md:flex-row gap-4">
+      
           <FilterSidebar 
             priceRange={priceRange}
             setPriceRange={setPriceRange}
@@ -120,9 +107,11 @@ const Menu = () => {
             popularItems={popularItems}
           />
 
-          {/* Product Grid */}
-          <div className="md:col-span-3">
-            {/* <ProductGrid products={products} /> */}
+         
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {products.map((product) => (
+            <ProductCard key={product.id} productData={product} />
+          ))}
           </div>
         </div>
       </main>

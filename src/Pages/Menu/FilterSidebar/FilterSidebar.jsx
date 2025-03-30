@@ -1,10 +1,10 @@
 import { FaFilter } from "react-icons/fa";
-import SaleBanner from "../SaleBanner/SaleBanner";
-import PopularItems from "../PopularItems/PopularItems";
-import PopularTags from "../PopularTags/PopularTags";
-import CategoryFilter from "../CategoryFilter/CategoryFilter";
-import StatusFilter from "../StatusFilter/StatusFilter";
-import TagsFilter from "../TagsFilter/TagsFilter";
+import SaleBanner from "./SaleBanner/SaleBanner";
+import PopularItems from "./PopularItems/PopularItems";
+import PopularTags from "./PopularTags/PopularTags";
+import CategoryFilter from "./CategoryFilter/CategoryFilter";
+import StatusFilter from "./StatusFilter/StatusFilter";
+import TagsFilter from "./TagsFilter/TagsFilter";
 
 
 

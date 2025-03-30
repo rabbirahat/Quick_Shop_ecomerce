@@ -13,7 +13,7 @@ const PopularItems = ({ items }) => {
       <h3 className="font-bold text-success text-lg mb-4">Popular Items</h3>
       <div className="space-y-4">
         {items?.map((item) => (
-          <Link to="/menu" className="">
+          <Link to="/menu" key={item.id} className="">
             <div key={item?.id} className="flex items-center gap-3 py-4">
               {/* Image */}
               <img
