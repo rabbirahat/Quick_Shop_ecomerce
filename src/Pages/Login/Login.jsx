@@ -13,7 +13,7 @@ const Login = () => {
 
                 <div className='lg:w-[450px] mt-10'>
                     <h1 className='text-4xl font-bold text-[#253D4E]'>LOGIN</h1>
-                    <p className='font-medium mt-1 mb-6 text-[#B6B6B6]'>Don't have an account ?  <Link to='/singup' className='text-success font-bold'> Create here</Link></p>
+                    <p className='font-medium mt-1 mb-6 text-[#B6B6B6]'>Don't have an account ?  <Link to='/signup' className='text-success font-bold'> Create here</Link></p>
                     <form>
                         <input type="email" className='py-3 px-3 border border-[ #E5E5E5] rounded w-full mb-4' placeholder='Your Email Address' />
                         <input type="email" className='py-3 px-3 border border-[ #E5E5E5] rounded w-full mb-4' placeholder='Your Password' />
