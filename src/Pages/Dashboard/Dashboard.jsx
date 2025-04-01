@@ -43,7 +43,7 @@ const Dashboard = () => {
                             <FiUser className="block text-xl mr-4 ml-4" /> Account Details
                         </span>
                     </Link>
-                    <Link to="/logout">
+                    <Link to="#">
                         <span className="flex items-center border border-[#E5E5E5] h-[50px] w-[220px] mb-3 rounded-lg font-semibold hover:border-success hover:shadow-md">
                             <FiLogOut className="block text-xl mr-4 ml-4" /> Log out
                         </span>

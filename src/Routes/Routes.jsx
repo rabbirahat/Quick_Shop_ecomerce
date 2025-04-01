@@ -17,6 +17,7 @@ import MyOrders from "../Pages/Dashboard/MyOrders";
 import AccountDetails from "../Pages/Dashboard/AccountDetails";
 import ProductDetails from "../Pages/ProductDetails/ProductDetails";
 import Cart from "../Pages/MyCart/MyCart";
+import ForgetPassword from "../Pages/ForgetPassword/ForgetPassword";
 
 export const router = createBrowserRouter([
   {
@@ -42,6 +43,10 @@ export const router = createBrowserRouter([
       {
         path: "/signup",
         element: <Signup />,
+      },
+      {
+        path: "/forget-password",
+        element: <ForgetPassword />,
       },
       {
         path: "/cart",
