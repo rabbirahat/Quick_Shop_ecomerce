@@ -1,6 +1,7 @@
 import React from "react";
 import { Rating, Star } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
+import { Link } from "react-router-dom";
 
 const Card_sm = ({ product }) => {
   const RatingStyles = {
@@ -17,7 +18,9 @@ const Card_sm = ({ product }) => {
         className="w-[102px] h-[102px]"
       />
       <div className="pl-7 ">
-        <h2 className="font-bold leading-5">{product.title}</h2>
+        <Link to={`/product/${product.id}`} className="">
+          <h2 className="font-bold leading-5">{product.title}</h2>
+        </Link>
 
         <div className="flex items-center mb-2">
           <Rating

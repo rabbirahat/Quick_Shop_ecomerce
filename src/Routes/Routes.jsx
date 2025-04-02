@@ -6,7 +6,6 @@ import Checkout from "../Pages/Checkout/Checkout";
 import Contact from "../Pages/Contact/Contact";
 import MyCart from "../Pages/MyCart/MyCart";
 import NotFound from "../Pages/NotFound/NotFound";
-import ProductsList from "../Pages/Menu/Menu";
 import About from "../Pages/About/About";
 import Login from "../Pages/Login/Login";
 import Signup from "../Pages/Signup/Signup";
@@ -16,6 +15,9 @@ import TrackYourOrder from "../Pages/Dashboard/TrackYourOrder";
 import MyAddress from "../Pages/Dashboard/MyAddress";
 import MyOrders from "../Pages/Dashboard/MyOrders";
 import AccountDetails from "../Pages/Dashboard/AccountDetails";
+import ProductDetails from "../Pages/ProductDetails/ProductDetails";
+import Cart from "../Pages/MyCart/MyCart";
+import ForgetPassword from "../Pages/ForgetPassword/ForgetPassword";
 
 export const router = createBrowserRouter([
   {
@@ -43,6 +45,14 @@ export const router = createBrowserRouter([
         element: <Signup />,
       },
       {
+        path: "/forget-password",
+        element: <ForgetPassword />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
+      },
+      {
         path: "/checkout",
         element: <Checkout />,
       },
@@ -54,9 +64,10 @@ export const router = createBrowserRouter([
         path: "/not-found",
         element: <NotFound />,
       },
+
       {
-        path: "/productList",
-        element: <ProductsList />,
+        path: "/product/:id",
+        element: <ProductDetails />,
       },
       {
         path: "/menu",

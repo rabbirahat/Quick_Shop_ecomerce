@@ -1,11 +1,11 @@
-import { Rating, Star } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
 import { AiOutlineHeart, AiOutlineShoppingCart } from "react-icons/ai";
 import { FiEye } from "react-icons/fi";
 import { Link } from "react-router-dom";
+import ProductInfoCard from "../../../Components/ProductInfoCard";
 
-const PopulerProductCard = ({ productData }) => {
-  // Logic for determining the badge color
+const ProductCard = ({ productData }) => {
+  
   const getBadgeColor = (badge) => {
     if (badge === "Hot") {
       return "bg-success";
@@ -21,14 +21,10 @@ const PopulerProductCard = ({ productData }) => {
     }
   };
 
-  const RatingStyles = {
-    itemShapes: Star,
-    activeFillColor: "#ffb700",
-    inactiveFillColor: "#ddd",
-  };
+
 
   return (
-    <div className="max-w-xm border border-[#BCE3C9] rounded-lg overflow-hidden group mx-auto">
+    <div className="w- border border-[#BCE3C9] rounded-lg overflow-hidden group mx-auto">
       <p className="mt-2 mb-3 text-[#FFF]">
         <small
           className={`${getBadgeColor(
@@ -68,43 +64,21 @@ const PopulerProductCard = ({ productData }) => {
         </div>
       </div>
       <div className="p-3">
-        <p className="text-textBody hover:text-[#3BB77E]">
-          <small>{productData.category}</small>
-        </p>
-        <Link
-          to={`/product/${productData.id}`}
-          className=""
-        >
-          <p className="heading-sm link-hover">{productData.title}</p>
+      <ProductInfoCard productData={productData} />
+        <progress
+          className="progress progress-success "
+          value={productData.sales}
+          max={productData.stock}
+        ></progress>
+        <Link className="" to={"/cart"}>
+          <button className="w-full justify-center bg-success flex items-center text-white px-3 py-1 rounded my-4 btn-hover">
+            <AiOutlineShoppingCart className="m-2 p=2" />
+            <p className="font-[12px] ">Shop Now</p>
+          </button>
         </Link>
-        <div className="flex items-center text-warning gap-1 mt-2">
-          <Rating
-            style={{ maxWidth: 100 }}
-            value={productData.rating}
-            itemStyles={RatingStyles}
-            readOnly
-          />
-          <span className="text-textBody">({productData.rating})</span>
-        </div>
-        <p>
-          By <span className="text-[#3BB77E]">{productData.brand}</span>
-        </p>
-        <div className="flex items-center gap-2">
-          <p className="text-2xl font-semibold text-[#3BB78F]">
-            ${productData.price}
-          </p>
-          <del className="text-textBody font-semibold">
-            {productData.oldPrice}
-          </del>
-          <Link to={"/cart"}>
-            <button className="mx-auto bg-[#DEF9EC] text-[#3BB78F] font-semibold px-3 rounded py-2 flex items-center gap-2 hover:bg-[#3BB77E] hover:text-[#FFF]">
-              <AiOutlineShoppingCart /> Add
-            </button>
-          </Link>
-        </div>
       </div>
     </div>
-  );
+);
 };
 
-export default PopulerProductCard;
+export default ProductCard;

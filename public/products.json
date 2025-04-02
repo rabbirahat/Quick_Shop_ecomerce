@@ -14,7 +14,21 @@
     "images": {
       "default": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-2-1.jpg",
       "hover": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-2-2.jpg"
-    }
+    },
+    "description": "All Natural Italian-Style Chicken Meatballs made with high-quality, ethically-sourced chicken. These meatballs are seasoned with a traditional blend of Italian herbs and spices, ensuring that each bite delivers a flavorful, savory experience. They are free from preservatives and artificial ingredients, providing a healthy and delicious meal option for you and your family. Whether paired with pasta, served as a snack, or added to your favorite sandwiches, these meatballs offer versatility and ease of preparation. Enjoy the authentic taste of Italy in every bite.",
+    "additionalInfo": "These chicken meatballs are perfect for quick and easy meal preparation. They are fully cooked and can be reheated in the oven, microwave, or stovetop. Serve them with a side of vegetables or pasta for a complete meal. They are gluten-free and made with non-GMO chicken. Ideal for busy families, meal prep enthusiasts, or anyone looking to enjoy a delicious and nutritious meal without the hassle of cooking from scratch.",
+    "reviews": [
+      {
+        "author": "John Doe",
+        "rating": 4,
+        "comment": "Great taste, but a little salty."
+      },
+      {
+        "author": "Jane Smith",
+        "rating": 5,
+        "comment": "Delicious and easy to cook."
+      }
+    ]
   },
   {
     "id": 2,
@@ -31,7 +45,21 @@
     "images": {
       "default": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-3-1.jpg",
       "hover": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-3-2.jpg"
-    }
+    },
+    "description": "Angie’s Boomchickapop Sweet & Salty Kettle Corn is a delightful treat that perfectly balances sweet and savory flavors. Made from high-quality, non-GMO popcorn and cooked in small batches, this kettle corn offers an irresistible crunch with every bite. The sweet sugar coating complements the lightly salted kernels, creating an indulgent yet satisfying snack. Whether you're enjoying it during movie night, at a party, or simply as a midday snack, this kettle corn provides a deliciously light and crispy experience. It's a great snack option for both kids and adults alike, offering a fun and tasty alternative to traditional chips.",
+    "additionalInfo": "Angie’s Boomchickapop Sweet & Salty Kettle Corn is made with simple, non-GMO ingredients. It is gluten-free, dairy-free, and contains no artificial flavors or preservatives. Each bag is a perfect size for sharing with friends and family or as a treat for yourself. Ideal for those who love a sweet and salty combination, this kettle corn is a healthier alternative to regular chips or other sugary snacks. It’s perfect for snacking on the go, and is also great for parties, gatherings, or movie nights.",
+    "reviews": [
+      {
+        "author": "Mary Ann",
+        "rating": 5,
+        "comment": "Perfect balance of sweet and salty!"
+      },
+      {
+        "author": "Carlos Lee",
+        "rating": 4,
+        "comment": "Good, but I prefer a little more salt."
+      }
+    ]
   },
   {
     "id": 3,
@@ -48,7 +76,21 @@
     "images": {
       "default": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-4-1.jpg",
       "hover": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-4-2.jpg"
-    }
+    },
+    "description": "Foster Farms Takeout Crispy Classic Buffalo Wings are the perfect combination of crispy texture and bold, spicy flavor. These wings are expertly seasoned with a blend of authentic buffalo sauce and spices, then cooked to a perfect crisp. Whether you're hosting a party, enjoying a game day snack, or simply craving a hearty bite, these wings offer a convenient and tasty option. They are easy to heat up and are a crowd-pleaser for those who love the spicy kick of buffalo wings. Pair them with your favorite dipping sauce for an even more enhanced flavor experience.",
+    "additionalInfo": "Foster Farms Takeout Crispy Classic Buffalo Wings are fully cooked, making them convenient and easy to prepare. Just heat them in the oven or microwave for a quick meal or snack. They are gluten-free and contain no artificial flavors or preservatives. These wings are a great source of protein and are perfect for game day, parties, or casual meals. They pair well with ranch or blue cheese dressing and are great for sharing with friends and family.",
+    "reviews": [
+      {
+        "author": "Jack M.",
+        "rating": 4,
+        "comment": "Tasty, but a bit spicy for my liking."
+      },
+      {
+        "author": "Sally Green",
+        "rating": 5,
+        "comment": "Love these wings, they are crispy and delicious."
+      }
+    ]
   },
   {
     "id": 4,
@@ -65,7 +107,21 @@
     "images": {
       "default": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-5-1.jpg",
       "hover": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-5-2.jpg"
-    }
+    },
+    "description": "Blue Diamond Almonds Lightly Salted Vegetables offer a healthy and crunchy snack option for pet owners who want to treat their pets to something delicious and nutritious. These almonds are lightly salted to bring out their natural flavor, and combined with vegetables to provide a balanced and satisfying snack. The almonds are rich in healthy fats, vitamins, and minerals, making them a great option for pets that need extra nutrients. Serve them as an occasional treat to your furry friend, or enjoy them as a snack yourself. These almonds provide a wholesome, guilt-free indulgence.",
+    "additionalInfo": "Blue Diamond Almonds Lightly Salted Vegetables are an excellent choice for pet owners looking to give their pets a nutritious and tasty treat. These almonds are a good source of protein and healthy fats, making them a great addition to your pet's diet. The lightly salted almonds are also a good source of vitamins and minerals, promoting overall health and well-being for your furry friend. Serve these almonds as a reward, snack, or meal topper to add a little extra flavor to your pet’s meals. They are also a great snack for humans and can be enjoyed on their own or paired with other foods.",
+    "reviews": [
+      {
+        "author": "Emily R.",
+        "rating": 5,
+        "comment": "My dog loves these almonds!"
+      },
+      {
+        "author": "Tom P.",
+        "rating": 4,
+        "comment": "Great snack, but a little pricey."
+      }
+    ]
   },
   {
     "id": 5,
@@ -82,6 +138,454 @@
     "images": {
       "default": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-1-1.jpg",
       "hover": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-1-2.jpg"
-    }
+    },
+    "description": "Seeds of Change Organic Quinoa, Brown, & Red Rice is a wholesome and nutritious blend of organic quinoa, brown rice, and red rice. This combination provides a balanced mix of protein, fiber, and essential nutrients, making it an excellent choice for those seeking a healthy meal option. The grains are organically grown and free from synthetic pesticides or fertilizers, ensuring that you're enjoying a pure, natural product. Perfect as a side dish, a base for salads, or mixed into your favorite dishes, this rice blend offers versatility and nourishment for any meal.",
+    "additionalInfo": "Seeds of Change Organic Quinoa, Brown, & Red Rice is a quick and easy-to-prepare option for busy individuals or families. It is certified organic and contains no preservatives, artificial flavors, or added sugars. The blend of quinoa, brown rice, and red rice provides a rich source of protein and fiber, promoting digestive health and providing lasting energy. It can be used as a side dish for meats, mixed into salads for extra nutrition, or served as a base for grain bowls. Ideal for meal prep or adding variety to your meals.",
+    "reviews": [
+      {
+        "author": "Laura J.",
+        "rating": 5,
+        "comment": "Delicious and easy to prepare!"
+      },
+      {
+        "author": "James F.",
+        "rating": 4,
+        "comment": "Healthy and tasty, but a bit dry."
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "badge": "New",
+    "category": "Beverages",
+    "title": "Organic Apple Cider Vinegar",
+    "rating": 4.8,
+    "brand": "Nature's Path",
+    "price": 32.50,
+    "oldPrice": 35.00,
+    "sales": 110,
+    "stock": 150,
+    "countdownTarget": "2025-04-06 11:30:00",
+    "images": {
+      "default": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-2-1.jpg",
+      "hover": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-2-2.jpg"
+    },
+    "description": "Nature's Path Organic Apple Cider Vinegar, made from the finest organic apples. This vinegar is unfiltered and contains 'the mother,' providing natural enzymes and probiotics. Perfect for dressings, marinades, or as a health tonic.",
+    "additionalInfo": "This organic apple cider vinegar is raw, unfiltered, and unpasteurized. It's a great addition to your pantry for various culinary and health purposes. Suitable for vegans and gluten-free.",
+    "reviews": [
+      {
+        "author": "Alice W.",
+        "rating": 5,
+        "comment": "Excellent quality and taste!"
+      },
+      {
+        "author": "David K.",
+        "rating": 4,
+        "comment": "Good for health and cooking."
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "badge": "",
+    "category": "Dairy",
+    "title": "Organic Greek Yogurt",
+    "rating": 4.9,
+    "brand": "Chobani",
+    "price": 25.75,
+    "oldPrice": 28.00,
+    "sales": 125,
+    "stock": 130,
+    "countdownTarget": "2025-04-07 15:45:00",
+    "images": {
+      "default": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-3-1.jpg",
+      "hover": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-3-2.jpg"
+    },
+    "description": "Chobani Organic Greek Yogurt, rich and creamy, made from organic milk. High in protein and low in fat, it's a healthy choice for breakfast or snacks. Available in various flavors.",
+    "additionalInfo": "This organic Greek yogurt is made with live and active cultures. It's free from artificial sweeteners and flavors. Perfect for smoothies, parfaits, or eating on its own.",
+    "reviews": [
+      {
+        "author": "Sophie L.",
+        "rating": 5,
+        "comment": "The best Greek yogurt I've ever had!"
+      },
+      {
+        "author": "Michael B.",
+        "rating": 5,
+        "comment": "Creamy and delicious."
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "badge": "-5%",
+    "category": "Bakery",
+    "title": "Organic Sourdough Bread",
+    "rating": 4.4,
+    "brand": "Boudin",
+    "price": 48.00,
+    "oldPrice": 50.50,
+    "sales": 90,
+    "stock": 110,
+    "countdownTarget": "2025-04-08 10:00:00",
+    "images": {
+      "default": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-4-1.jpg",
+      "hover": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-4-2.jpg"
+    },
+    "description": "Boudin Organic Sourdough Bread, baked fresh daily. Made with organic flour and natural starters. Its tangy flavor and chewy texture make it perfect for sandwiches or toast.",
+    "additionalInfo": "This organic sourdough bread is naturally leavened and free from preservatives. It's a great source of fiber and has a low glycemic index. Suitable for vegetarians.",
+    "reviews": [
+      {
+        "author": "Oliver G.",
+        "rating": 4,
+        "comment": "Great taste, but a bit pricey."
+      },
+      {
+        "author": "Emma H.",
+        "rating": 5,
+        "comment": "Delicious and fresh!"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "badge": "",
+    "category": "Fruits",
+    "title": "Organic Gala Apples",
+    "rating": 4.7,
+    "brand": "Tree Top",
+    "price": 38.25,
+    "oldPrice": 38.25,
+    "sales": 115,
+    "stock": 140,
+    "countdownTarget": "2025-04-09 16:15:00",
+    "images": {
+      "default": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-5-1.jpg",
+      "hover": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-5-2.jpg"
+    },
+    "description": "Tree Top Organic Gala Apples, crisp and sweet, grown without pesticides. These apples are perfect for snacking, baking, or juicing. Rich in vitamins and antioxidants.",
+    "additionalInfo": "These organic Gala apples are handpicked and carefully selected for their quality. They are non-GMO and certified organic. A healthy and delicious snack for all ages.",
+    "reviews": [
+      {
+        "author": "Noah R.",
+        "rating": 5,
+        "comment": "Sweet and crunchy!"
+      },
+      {
+        "author": "Isabella P.",
+        "rating": 4,
+        "comment": "Good quality apples."
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "badge": "Hot",
+    "category": "Hodo Foods",
+    "title": "Spicy Italian Sausage",
+    "rating": 4.6,
+    "brand": "Johnsonville",
+    "price": 55.50,
+    "oldPrice": 60.00,
+    "sales": 100,
+    "stock": 125,
+    "countdownTarget": "2025-04-10 12:00:00",
+    "images": {
+      "default": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-1-1.jpg",
+      "hover": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-1-2.jpg"
+    },
+    "description": "Johnsonville Spicy Italian Sausage, made with premium pork and a blend of spices. Perfect for grilling, pasta dishes, or pizza toppings. Adds a flavorful kick to any meal.",
+    "additionalInfo": "This spicy Italian sausage is gluten-free and contains no artificial flavors or colors. It's a great source of protein and can be cooked in various ways. Ideal for barbecues and family dinners.",
+    "reviews": [
+      {
+        "author": "William Y.",
+        "rating": 5,
+        "comment": "Perfect spice level!"
+      },
+      {
+        "author": "Sophia T.",
+        "rating": 4,
+        "comment": "Tasty and versatile."
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "badge": "Sale",
+    "category": "Hodo Foods",
+    "title": "Cheddar Cheese Popcorn",
+    "rating": 4.3,
+    "brand": "Smartfood",
+    "price": 49.99,
+    "oldPrice": 52.50,
+    "sales": 105,
+    "stock": 115,
+    "countdownTarget": "2025-04-11 14:30:00",
+    "images": {
+      "default": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-2-1.jpg",
+      "hover": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-2-2.jpg"
+    },
+    "description": "Smartfood Cheddar Cheese Popcorn, a classic snack with a rich cheddar flavor. Made with real cheese and air-popped for a light and crunchy texture. Great for movie nights or casual snacking.",
+    "additionalInfo": "This cheddar cheese popcorn is gluten-free and contains no artificial flavors. It's a good source of fiber and low in calories. Perfect for sharing with friends and family.",
+    "reviews": [
+      {
+        "author": "Ethan U.",
+        "rating": 4,
+        "comment": "Cheesy and delicious!"
+      },
+      {
+        "author": "Mia S.",
+        "rating": 4,
+        "comment": "Good snack, but a bit salty."
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "badge": "",
+    "category": "Vegetables",
+    "title": "Organic Broccoli Florets",
+    "rating": 4.8,
+    "brand": "Green Giant",
+    "price": 45.25,
+    "oldPrice": 48.00,
+    "sales": 95,
+    "stock": 120,
+    "countdownTarget": "2025-04-12 10:15:00",
+    "images": {
+      "default": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-3-1.jpg",
+      "hover": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-3-2.jpg"
+    },
+    "description": "Green Giant Organic Broccoli Florets, fresh and crisp, ready to cook. These florets are rich in vitamins and fiber, making them a healthy addition to any meal. Steam, roast, or stir-fry for a quick side dish.",
+    "additionalInfo": "This organic broccoli is non-GMO and grown without pesticides. It's a great source of vitamin C and can be cooked in various ways. Suitable for vegans and vegetarians.",
+    "reviews": [
+      {
+        "author": "Alexander Q.",
+        "rating": 5,
+        "comment": "Fresh and tasty!"
+      },
+      {
+        "author": "Ava R.",
+        "rating": 4,
+        "comment": "Good quality broccoli."
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "badge": "-10%",
+    "category": "Pet Foods",
+    "title": "Organic Chicken and Rice Dog Food",
+    "rating": 4.7,
+    "brand": "Wellness",
+    "price": 60.00,
+    "oldPrice": 66.00,
+    "sales": 120,
+    "stock": 130,
+    "countdownTarget": "2025-04-13 18:45:00",
+    "images": {
+      "default": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-4-1.jpg",
+      "hover": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-4-2.jpg"
+    },
+    "description": "Wellness Organic Chicken and Rice Dog Food, made with high-quality organic ingredients. Provides a balanced diet for adult dogs, promoting healthy digestion and a shiny coat. Free from artificial preservatives and flavors.",
+    "additionalInfo": "This organic dog food is grain-free and rich in protein. It supports immune health and provides essential nutrients for your dog's well-being. Suitable for all breeds and sizes.",
+    "reviews": [
+      {
+        "author": "Daniel I.",
+        "rating": 5,
+        "comment": "My dog loves this food!"
+      },
+      {
+        "author": "Chloe O.",
+        "rating": 4,
+        "comment": "Good quality, but a bit pricey."
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "badge": "",
+    "category": "Snack",
+    "title": "Organic Mixed Nuts",
+    "rating": 4.5,
+    "brand": "Planters",
+    "price": 35.75,
+    "oldPrice": 38.00,
+    "sales": 98,
+    "stock": 110,
+    "countdownTarget": "2025-04-14 09:00:00",
+    "images": {
+      "default": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-5-1.jpg",
+      "hover": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-5-2.jpg"
+    },
+    "description": "Planters Organic Mixed Nuts, a healthy snack mix of almonds, cashews, and walnuts. Lightly salted and roasted to perfection. Rich in protein and healthy fats, providing a satisfying snack.",
+    "additionalInfo": "This organic mixed nuts blend is gluten-free and contains no artificial flavors. It's a great source of vitamins and minerals. Perfect for on-the-go snacking or adding to salads and desserts.",
+    "reviews": [
+      {
+        "author": "Matthew N.",
+        "rating": 5,
+        "comment": "Delicious and healthy!"
+      },
+      {
+        "author": "Grace L.",
+        "rating": 4,
+        "comment": "Good mix, but a bit too salty."
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "badge": "New",
+    "category": "Beverages",
+    "title": "Organic Coconut Water",
+    "rating": 4.9,
+    "brand": "Vita Coco",
+    "price": 30.50,
+    "oldPrice": 33.00,
+    "sales": 110,
+    "stock": 150,
+    "countdownTarget": "2025-04-15 11:30:00",
+    "images": {
+      "default": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-1-1.jpg",
+      "hover": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-1-2.jpg"
+    },
+    "description": "Vita Coco Organic Coconut Water, naturally hydrating and refreshing. Made from young green coconuts, it's rich in electrolytes and potassium. Perfect for post-workout recovery or a refreshing drink.",
+    "additionalInfo": "This organic coconut water is non-GMO and contains no added sugars or preservatives. It's a great source of hydration and can be enjoyed chilled or at room temperature. Suitable for vegans and gluten-free.",
+    "reviews": [
+      {
+        "author": "Ryan K.",
+        "rating": 5,
+        "comment": "Very refreshing!"
+      },
+      {
+        "author": "Lily J.",
+        "rating": 5,
+        "comment": "Best coconut water I've tried."
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "badge": "",
+    "category": "Dairy",
+    "title": "Organic Almond Milk",
+    "rating": 4.6,
+    "brand": "Silk",
+    "price": 27.75,
+    "oldPrice": 30.00,
+    "sales": 125,
+    "stock": 130,
+    "countdownTarget": "2025-04-16 15:45:00",
+    "images": {
+      "default": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-2-1.jpg",
+      "hover": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-2-2.jpg"
+    },
+    "description": "Silk Organic Almond Milk, smooth and creamy, made from organic almonds. Low in calories and rich in vitamin E. Perfect for smoothies, cereal, or coffee. Dairy-free and vegan-friendly.",
+    "additionalInfo": "This organic almond milk is unsweetened and contains no artificial flavors or colors. It's a great source of calcium and can be used as a dairy alternative in various recipes. Suitable for vegans and gluten-free.",
+    "reviews": [
+      {
+        "author": "Jacob H.",
+        "rating": 5,
+        "comment": "Great dairy alternative!"
+      },
+      {
+        "author": "Ella G.",
+        "rating": 4,
+        "comment": "Good taste, but a bit thin."
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "badge": "-5%",
+    "category": "Bakery",
+    "title": "Organic Whole Wheat Bread",
+    "rating": 4.3,
+    "brand": "Dave's Killer Bread",
+    "price": 46.50,
+    "oldPrice": 49.00,
+    "sales": 90,
+    "stock": 110,
+    "countdownTarget": "2025-04-17 10:00:00",
+    "images": {
+      "default": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-3-1.jpg",
+      "hover": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-3-2.jpg"
+    },
+    "description": "Dave's Killer Bread Organic Whole Wheat Bread, hearty and nutritious, made with organic whole grains. High in fiber and protein, it's a healthy choice for sandwiches and toast. Free from artificial preservatives and flavors.",
+    "additionalInfo": "This organic whole wheat bread is non-GMO and contains no added sugars. It's a great source of energy and can be used in various recipes. Suitable for vegans and vegetarians.",
+    "reviews": [
+      {
+        "author": "Logan F.",
+        "rating": 4,
+        "comment": "Healthy and tasty!"
+      },
+      {
+        "author": "Scarlett E.",
+        "rating": 4,
+        "comment": "Good bread, but a bit dense."
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "badge": "",
+    "category": "Fruits",
+    "title": "Organic Bananas",
+    "rating": 4.8,
+    "brand": "Chiquita",
+    "price": 36.75,
+    "oldPrice": 39.00,
+    "sales": 115,
+    "stock": 140,
+    "countdownTarget": "2025-04-18 16:15:00",
+    "images": {
+      "default": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-4-1.jpg",
+      "hover": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-4-2.jpg"
+    },
+    "description": "Chiquita Organic Bananas, sweet and creamy, grown without pesticides. Rich in potassium and fiber, they are a healthy snack or ingredient for smoothies and desserts.",
+    "additionalInfo": "These organic bananas are non-GMO and certified organic. They are handpicked and carefully selected for their quality. A great source of energy and nutrients.",
+    "reviews": [
+      {
+        "author": "Jackson D.",
+        "rating": 5,
+        "comment": "Sweet and delicious!"
+      },
+      {
+        "author": "Victoria C.",
+        "rating": 5,
+        "comment": "Perfect for smoothies."
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "badge": "Hot",
+    "category": "Hodo Foods",
+    "title": "Organic Turkey Breast",
+    "rating": 4.7,
+    "brand": "Applegate",
+    "price": 58.00,
+    "oldPrice": 62.50,
+    "sales": 100,
+    "stock": 125,
+    "countdownTarget": "2025-04-19 12:00:00",
+    "images": {
+      "default": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-5-1.jpg",
+      "hover": "http://wp.alithemes.com/html/nest/demo/assets/imgs/shop/product-5-2.jpg"
+    },
+    "description": "Applegate Organic Turkey Breast, lean and flavorful, sliced for sandwiches and salads. Made with organic turkey and no added nitrates or nitrites. A healthy and convenient option.",
+    "additionalInfo": "This organic turkey breast is gluten-free and contains no artificial preservatives or flavors. It's a great source of protein and can be used in various recipes. Suitable for sandwiches, wraps, and salads.",
+    "reviews": [
+      {
+        "author": "Lucas B.",
+        "rating": 5,
+        "comment": "Lean and tasty!"
+      },
+      {
+        "author": "Madison A.",
+        "rating": 4,
+        "comment": "Good quality turkey."
+      }
+    ]
   }
 ]

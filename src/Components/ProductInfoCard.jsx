@@ -1,5 +1,6 @@
 import { Rating, Star } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
+import { Link } from "react-router-dom";
 
 const ProductInfoCard = ({ productData }) => {
   const RatingStyles = {
@@ -12,7 +13,9 @@ const ProductInfoCard = ({ productData }) => {
       <p className="link-hover">
         <small>{productData.category}</small>
       </p>
-      <p className=" link-hover">{productData.title}</p>
+      <Link to={`/product/${productData.id}`} className="">
+        <p className=" link-hover">{productData.title}</p>
+      </Link>
       <div className="flex items-center text-warning gap-1 mt-2">
         <Rating
           style={{ maxWidth: 100 }}
