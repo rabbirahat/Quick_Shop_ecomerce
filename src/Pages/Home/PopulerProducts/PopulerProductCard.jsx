@@ -26,7 +26,7 @@ const PopulerProductCard = ({ productData }) => {
     activeFillColor: "#ffb700",
     inactiveFillColor: "#ddd",
   };
-
+  
   return (
     <div className="max-w-xm border border-[#BCE3C9] rounded-lg overflow-hidden group mx-auto">
       <p className="mt-2 mb-3 text-[#FFF]">
@@ -72,7 +72,7 @@ const PopulerProductCard = ({ productData }) => {
           <small>{productData.category}</small>
         </p>
         <Link
-          to={`/product/${productData.id}`}
+          to={`/product/${productData._id}`}
           className=""
         >
           <p className="heading-sm link-hover">{productData.title}</p>

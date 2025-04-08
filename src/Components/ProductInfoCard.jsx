@@ -13,7 +13,7 @@ const ProductInfoCard = ({ productData }) => {
       <p className="link-hover">
         <small>{productData.category}</small>
       </p>
-      <Link to={`/product/${productData.id}`} className="">
+      <Link to={`/product/${productData._id}`} className="">
         <p className=" link-hover">{productData.title}</p>
       </Link>
       <div className="flex items-center text-warning gap-1 mt-2">

@@ -8,7 +8,7 @@ const Dots = ({ activeIndex, slides, onClick }) => {
                     key={index}
                     onClick={() => onClick(index)}
                     className={`w-3 h-3 mx-2 rounded-full cursor-pointer ${
-                        index === activeIndex ? "bg-green-500" : "bg-gray-400"
+                        index === activeIndex ? "bg-success" : "bg-gray-400"
                     }`}
                 />
             ))}

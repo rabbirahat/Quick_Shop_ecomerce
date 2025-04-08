@@ -12,6 +12,8 @@
   "dependencies": {
     "@smastrom/react-rating": "^1.5.0",
     "@tailwindcss/vite": "^4.0.15",
+    "axios": "^1.8.4",
+    "firebase": "^11.6.0",
     "lucide-react": "^0.484.0",
     "react": "^19.0.0",
     "react-countup": "^6.5.3",

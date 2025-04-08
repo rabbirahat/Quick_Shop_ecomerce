@@ -2,17 +2,28 @@ import React, { useEffect, useState } from "react";
 import img1 from "../../../assets/DailyBestSales/best sell-image.png";
 
 import DailySalesCard from "./DailySalesCard";
+import { axiosSecure } from "../../../Hook/useAxios";
 
 const BestSales = () => {
   const [products, setProducts] = useState([]);
-  useEffect(() => {
-    fetch("products.json")
-      .then((res) => res.json())
-      .then((data) => {
-        setProducts(data);
-      });
-  },[]);
+  const [selectedCategory, setSelectedCategory] = useState("Meat");
+  const [categories, setCategories] = useState([]);
 
+  useEffect(() => {
+    axiosSecure.get(`/products/category/${selectedCategory}`).then((res) => {
+      setProducts(res.data); 
+    });
+  },[selectedCategory]);
+
+
+  
+  useEffect(() => {
+    axiosSecure.get(`/products/categories`).then((res) => {
+      setCategories(res.data);
+    });
+  }, []);
+
+  
   return (
     <div className="xxl:max-w-7xl md-w-full my-16  mx-auto px-4  md:px-3">
       <div className="block md:flex flex-cols-1 justify-between text-center items-center lg:flex-cols-2 md:mb-1 pb-10">
@@ -20,15 +31,15 @@ const BestSales = () => {
           Daily Best Sales
         </h3>
         <ul className="flex gap-5 md:justify-end justify-center flex-wrap text-lg">
-          <li className="transition ease-in-out delay-150 hover:text-[#3BB77E] hover:font-bold hover:-translate-y-1 duration-300">
-            Meats
-          </li>
-          <li className="transition ease-in-out delay-150 hover:text-[#3BB77E] hover:font-bold hover:-translate-y-1 duration-300">
-            Vegetables
-          </li>
-          <li className="transition ease-in-out delay-150 hover:text-[#3BB77E] hover:font-bold hover:-translate-y-1 duration-300">
-            Fruits
-          </li>
+          {categories?.map((category, i) => (
+            <li
+              key={i}
+              className="link-hover"
+              onClick={() => setSelectedCategory(category.categories)}
+            >
+              {category.categories}
+            </li>
+          ))}
         </ul>
       </div>
 
@@ -39,14 +50,14 @@ const BestSales = () => {
             Bring nature into your home{" "}
           </h1>
           <div className="absolute top-40 p-5">
-            <button className="bg-[#3BB77E] flex items-center text-white px-3 py-2 rounded my-4 btn-hover">
+            <button className="bg-success flex items-center text-white px-3 py-2 rounded my-4 btn-hover">
               Shop Now &raquo;
             </button>
           </div>
         </div>
 
-        {products.map((product) => (
-          <DailySalesCard key={product.id} productData={product} />
+        {products?.map((product) => (
+          <DailySalesCard key={product._id} productData={product} />
         ))}
       </div>
     </div>
