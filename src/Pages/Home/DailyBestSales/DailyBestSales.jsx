@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import img1 from "../../../assets/DailyBestSales/best sell-image.png";
 
 import DailySalesCard from "./DailySalesCard";
-import { axiosSecure } from "../../../Hook/useAxios";
+import { axiosPublic } from "../../../Hook/useAxios";
+import { Link } from "react-router-dom";
 
 const BestSales = () => {
   const [products, setProducts] = useState([]);
@@ -10,7 +11,7 @@ const BestSales = () => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    axiosSecure.get(`/products/category/${selectedCategory}`).then((res) => {
+    axiosPublic.get(`/products/category/${selectedCategory}`).then((res) => {
       setProducts(res.data); 
     });
   },[selectedCategory]);
@@ -18,7 +19,7 @@ const BestSales = () => {
 
   
   useEffect(() => {
-    axiosSecure.get(`/products/categories`).then((res) => {
+    axiosPublic.get(`/products/categories`).then((res) => {
       setCategories(res.data);
     });
   }, []);
@@ -50,9 +51,11 @@ const BestSales = () => {
             Bring nature into your home{" "}
           </h1>
           <div className="absolute top-40 p-5">
+            <Link to="/menu">
             <button className="bg-success flex items-center text-white px-3 py-2 rounded my-4 btn-hover">
               Shop Now &raquo;
             </button>
+            </Link>
           </div>
         </div>
 

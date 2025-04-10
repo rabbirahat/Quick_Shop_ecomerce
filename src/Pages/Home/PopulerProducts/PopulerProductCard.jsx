@@ -3,8 +3,12 @@ import "@smastrom/react-rating/style.css";
 import { AiOutlineHeart, AiOutlineShoppingCart } from "react-icons/ai";
 import { FiEye } from "react-icons/fi";
 import { Link } from "react-router-dom";
+import useHandleAddToCart from "../../../Hook/useHandleAddToCart";
+
 
 const PopulerProductCard = ({ productData }) => {
+  const handleAddToCart = useHandleAddToCart();
+  
   // Logic for determining the badge color
   const getBadgeColor = (badge) => {
     if (badge === "Hot") {
@@ -26,7 +30,7 @@ const PopulerProductCard = ({ productData }) => {
     activeFillColor: "#ffb700",
     inactiveFillColor: "#ddd",
   };
-  
+
   return (
     <div className="max-w-xm border border-[#BCE3C9] rounded-lg overflow-hidden group mx-auto">
       <p className="mt-2 mb-3 text-[#FFF]">
@@ -52,29 +56,26 @@ const PopulerProductCard = ({ productData }) => {
           />
         </div>
 
-        <div className="absolute inset-0 bg-[#FFFF] top-24 border border-[#3BB77E] px-2 shadow-lg rounded-md w-24 h-12 mx-auto flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100">
+        <div className="absolute inset-0 bg-[#FFFF] top-24 border border-success px-2 shadow-lg rounded-md w-24 h-12 mx-auto flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100">
           <a
             href="#"
-            className=" text-2xl text-[#3BB77E] p-2 flex items-center justify-center transition"
+            className=" text-2xl text-success p-2 flex items-center justify-center transition"
           >
             <AiOutlineHeart />
           </a>
           <a
             href="#"
-            className="text-2xl text-[#3BB77E] p-2 flex items-center justify-center transition"
+            className="text-2xl text-success p-2 flex items-center justify-center transition"
           >
             <FiEye />
           </a>
         </div>
       </div>
       <div className="p-3">
-        <p className="text-textBody hover:text-[#3BB77E]">
+        <p className="text-textBody hover:text-success">
           <small>{productData.category}</small>
         </p>
-        <Link
-          to={`/product/${productData._id}`}
-          className=""
-        >
+        <Link to={`/product/${productData._id}`} className="">
           <p className="heading-sm link-hover">{productData.title}</p>
         </Link>
         <div className="flex items-center text-warning gap-1 mt-2">
@@ -87,7 +88,7 @@ const PopulerProductCard = ({ productData }) => {
           <span className="text-textBody">({productData.rating})</span>
         </div>
         <p>
-          By <span className="text-[#3BB77E]">{productData.brand}</span>
+          By <span className="text-success">{productData.brand}</span>
         </p>
         <div className="flex items-center gap-2">
           <p className="text-2xl font-semibold text-[#3BB78F]">
@@ -96,11 +97,13 @@ const PopulerProductCard = ({ productData }) => {
           <del className="text-textBody font-semibold">
             {productData.oldPrice}
           </del>
-          <Link to={"/cart"}>
-            <button className="mx-auto bg-[#DEF9EC] text-[#3BB78F] font-semibold px-3 rounded py-2 flex items-center gap-2 hover:bg-[#3BB77E] hover:text-[#FFF]">
-              <AiOutlineShoppingCart /> Add
-            </button>
-          </Link>
+
+          <button
+            onClick={() =>  handleAddToCart(productData)}
+            className="mx-auto bg-[#DEF9EC] text-[#3BB78F] font-semibold px-3 rounded py-2 flex items-center gap-2 hover:bg-success hover:text-[#FFF]"
+          >
+            <AiOutlineShoppingCart /> Add
+          </button>
         </div>
       </div>
     </div>

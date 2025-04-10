@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Card_sm from "./Card_sm"; // Import the Card_sm component
-import { axiosSecure } from "../../../Hook/useAxios";
+import { axiosPublic } from "../../../Hook/useAxios";
 
 
 const CatagoraisedProduct = () => {
@@ -10,22 +10,22 @@ const CatagoraisedProduct = () => {
   const [recent, setRecent] = useState([]);
   
     useEffect(() => {
-    axiosSecure.get("/products/top-sales").then((res) => {
+    axiosPublic.get("/products/top-sales").then((res) => {
       setTopSales(res.data);
     });},[])
 
     useEffect(() => {
-    axiosSecure.get("/products/trending").then((res) => {
+    axiosPublic.get("/products/trending").then((res) => {
       setTrending(res.data);
     });},[])
     
     useEffect(() => {
-    axiosSecure.get("/products/top-rated").then((res) => {
+    axiosPublic.get("/products/top-rated").then((res) => {
       settopRated(res.data);
     });},[])
 
     useEffect(() => {
-    axiosSecure.get("/products/recent").then((res) => {
+    axiosPublic.get("/products/recent").then((res) => {
       setRecent(res.data);
     });},[])
     

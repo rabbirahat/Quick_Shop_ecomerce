@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { AiOutlineRight } from "react-icons/ai";
 import DealsCard from "./DealsCard";
-import { axiosSecure } from "../../../Hook/useAxios";
+import { axiosPublic } from "../../../Hook/useAxios";
 import { Link } from "react-router-dom";
 const DealsOfTheDays = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-      axiosSecure.get(`/products`).then((res) => {
+      axiosPublic.get(`/products`).then((res) => {
         setProducts(res.data);
         setLoading(false);
       });

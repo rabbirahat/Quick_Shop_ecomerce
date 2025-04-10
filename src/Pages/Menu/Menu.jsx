@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import FilterSidebar from "./FilterSidebar/FilterSidebar";
 import ProductCard from "./ProductGrid/ProductCard";
 import header_blog from "../../assets/blogs/header-blog.png"
-import { axiosSecure } from "../../Hook/useAxios";
+import { axiosPublic } from "../../Hook/useAxios";
 
 
 
@@ -19,7 +19,7 @@ const Menu = () => {
 
   const [products, setProducts] = useState([]);
     useEffect(() => {
-      axiosSecure.get(`/products`).then((res) => {
+      axiosPublic.get(`/products`).then((res) => {
         setProducts(res.data);
       });
     }, []);

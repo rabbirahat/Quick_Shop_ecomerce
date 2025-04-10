@@ -14,7 +14,7 @@ const ProductInfoCard = ({ productData }) => {
         <small>{productData.category}</small>
       </p>
       <Link to={`/product/${productData._id}`} className="">
-        <p className=" link-hover">{productData.title}</p>
+        <p className=" link-hover">{productData.title.slice(0, 30) + "..."}</p>
       </Link>
       <div className="flex items-center text-warning gap-1 mt-2">
         <Rating
@@ -37,7 +37,7 @@ const ProductInfoCard = ({ productData }) => {
         </del>
       </div>
     </>
-  );
+  ); 
 };
 
 export default ProductInfoCard;

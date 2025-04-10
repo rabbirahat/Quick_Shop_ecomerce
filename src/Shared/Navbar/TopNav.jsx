@@ -9,6 +9,7 @@ import { RiArrowDropDownLine, RiListSettingsFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import logo from "../../assets/QS_LOGO.png";
 import { AuthContext } from "../../Providers/AuthProvider";
+import useCart from "../../Hook/useCarts.jsx";
 
 // Navigation Links
 const navLinks = [
@@ -27,7 +28,6 @@ const accountLinks = [
   { path: "/my-voucher", label: "My Voucher", icon: <BiMessageSquareDetail /> },
   { path: "/settings", label: "Settings", icon: <RiListSettingsFill /> },
 ];
-
 
 const NavMenu = ({ links, onClick }) => {
   const { user, logOut } = useContext(AuthContext);
@@ -62,10 +62,8 @@ const NavMenu = ({ links, onClick }) => {
   );
 };
 
-
 const AccountDropdown = () => {
   const { logOut, user } = useContext(AuthContext);
-
   return (
     <div className="relative group cursor-pointer">
       <div className="flex items-center font-medium whitespace-nowrap">
@@ -104,26 +102,38 @@ const AccountDropdown = () => {
   );
 };
 
-
 const CartWishlistIcons = () => {
   const { user } = useContext(AuthContext);
+  const [{cart}] = useCart();
+  console.log(cart);
   return (
     <ul className="flex font-lato items-center justify-between gap-5 font-base font-medium mr-5">
       <li>
-        <Link className="flex gap-1 items-center hover:text-success" to="/wishlist">
+        <Link
+          className="flex gap-1 items-center hover:text-success"
+          to="/wishlist"
+        >
           <BsHeart /> Wishlist
         </Link>
       </li>
       <li>
         {user?.email ? (
-          <Link className="flex gap-1 items-center hover:text-success relative" to="/cart">
-            <span className="absolute text-xs top-[-9px] left-[9px] bg-success rounded-lg px-1 text-white">
-              6
-            </span>
+          <Link
+            className="flex gap-1 items-center hover:text-success relative"
+            to="/cart"
+          >
+            {cart?.length > 0 ? (
+              <span className="absolute text-xs top-[-9px] left-[9px] bg-success rounded-lg px-1 text-white">
+                {cart?.length}
+              </span>
+            ) : null}
             <AiOutlineShoppingCart /> Cart
           </Link>
         ) : (
-          <Link className="flex gap-1 items-center hover:text-success relative" to="/login">
+          <Link
+            className="flex gap-1 items-center hover:text-success relative"
+            to="/login"
+          >
             Login
           </Link>
         )}
@@ -140,7 +150,10 @@ const SearchBar = () => (
         className="border border-success text-gray rounded-lg block lg:w-xl pl-10 p-2.5"
         placeholder="Search.."
       />
-      <button type="button" className="flex absolute inset-y-0 right-0 items-center pr-3">
+      <button
+        type="button"
+        className="flex absolute inset-y-0 right-0 items-center pr-3"
+      >
         <svg
           className="w-5 h-5 text-gray-500"
           fill="currentColor"

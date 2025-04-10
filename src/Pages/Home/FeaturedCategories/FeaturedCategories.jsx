@@ -6,7 +6,7 @@ import useWindowSize from "../../../Hook/useWindowSize";
 import { SampleNextArrow, SamplePrevArrow } from "./Arrow/Arrow";
 // import CategoryCard from "./Arrow/CategoryCard";
 import PromotionCard from "./PromotionCard";
-import { axiosSecure } from "../../../Hook/useAxios";
+import { axiosPublic } from "../../../Hook/useAxios";
 import { Link } from "react-router-dom";
 
 const CategoryCard = ({ imageSrc, title, description }) => (
@@ -55,7 +55,7 @@ const FeaturedCategories = ({
 
   // Fetch categories
   useEffect(() => {
-    axiosSecure.get(apiEndpoints.categories)
+    axiosPublic.get(apiEndpoints.categories)
       .then((res) => {
         setCategories(res.data.slice(0, categoryLimit));
       })
@@ -66,7 +66,7 @@ const FeaturedCategories = ({
 
   // Fetch products based on selected category
   useEffect(() => {
-    axiosSecure.get(`${apiEndpoints.products}/${selectedCategory}`)
+    axiosPublic.get(`${apiEndpoints.products}/${selectedCategory}`)
       .then((res) => {
         setProducts(res.data);
       })

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import PopulerProductCard from "./PopulerProductCard";
-import { axiosSecure } from "../../../Hook/useAxios";
+import { axiosPublic } from "../../../Hook/useAxios";
 import { Link } from "react-router-dom";
 
 const PopularProducts = () => {
@@ -10,7 +10,7 @@ const PopularProducts = () => {
 
   
   useEffect(() => {
-    axiosSecure.get("/products/popular")
+    axiosPublic.get("/products/popular")
     .then((res) => {
       setProducts(res.data);
     });
@@ -18,14 +18,14 @@ const PopularProducts = () => {
   
   
     useEffect(() => {
-      axiosSecure.get(`/products/categories`).then((res) => {
+      axiosPublic.get(`/products/categories`).then((res) => {
         setCategories(res.data);
       });
     }, []);
 
     
       useEffect(() => {
-        axiosSecure.get(`/products/category/${selectedCategory}`).then((res) => {
+        axiosPublic.get(`/products/category/${selectedCategory}`).then((res) => {
           setProducts(res.data); 
         });
       },[selectedCategory]);  

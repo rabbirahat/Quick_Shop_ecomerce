@@ -2,8 +2,10 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import ProductInfoCard from "../../../Components/ProductInfoCard";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import useHandleAddToCart from "../../../Hook/useHandleAddToCart";
 
 const DealsCard = ({ product }) => {
+  const handleAddToCart = useHandleAddToCart();
   const [timeLeft, setTimeLeft] = useState({
     hours: "00",
     minutes: "00",
@@ -47,7 +49,11 @@ const DealsCard = ({ product }) => {
   return (
     <div className="mb-5 mx-2 lg:mx-auto">
       <div className="bg-brand2 w-[90%] mx-auto h-[300px] rounded-[10px] flex justify-center items-center">
-        <img src={product.images.default} alt={product.title} className="object-cover max-h-[280px]" />
+        <img
+          src={product.images.default}
+          alt={product.title}
+          className="object-cover max-h-[280px]"
+        />
       </div>
 
       <div className="relative mt-[-50%] translate-y-0 hover:-translate-y-2 duration-300 cursor-pointer">
@@ -61,12 +67,12 @@ const DealsCard = ({ product }) => {
         {/* Price Section */}
         <div className="max-w-[86%] shadow-lg bg-white mx-auto mt-3 rounded-[10px] py-6 px-8">
           <ProductInfoCard productData={product} />
-          <Link to="/cart">
-            <button className="w-full justify-center bg-success flex items-center text-white px-3 py-2 rounded my-4 btn-hover">
-              <AiOutlineShoppingCart className="m-2" />
-              <p className="text-sm">Shop Now</p>
-            </button>
-          </Link>
+          <button
+            onClick={() => handleAddToCart(product)}
+            className="w-full justify-center bg-success flex items-center text-white px-3 py-2 rounded my-4 btn-hover"
+          >
+            <AiOutlineShoppingCart className="mr-2" /> Add To Cart
+          </button>
         </div>
       </div>
     </div>
