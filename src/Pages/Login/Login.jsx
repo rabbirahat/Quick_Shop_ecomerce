@@ -84,7 +84,7 @@ const Login = () => {
                   Remember me
                 </label>
               </div>
-              <Link to="/forgetpassword" className="font-medium text-[#B6B6B6]">
+              <Link to="/forget-password" className="font-medium text-[#B6B6B6]">
                 Forget Password
               </Link>
             </div>

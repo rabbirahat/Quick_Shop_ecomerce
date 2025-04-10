@@ -72,7 +72,7 @@ const AccountDropdown = () => {
         Account <RiArrowDropDownLine className="w-6 h-6" />
       </div>
 
-      <ul className="absolute hidden group-hover:block bg-base-100 rounded-box z-10 w-52 p-2 shadow-sm top-full mt-2">
+      <ul className="absolute hidden group-hover:block bg-base-100 rounded-box z-10 w-52 p-2 shadow-sm top-full ">
         {user?.email ? (
           <>
             {accountLinks.map((item, index) => (

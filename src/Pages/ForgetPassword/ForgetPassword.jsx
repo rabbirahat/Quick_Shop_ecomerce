@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const ForgetPassword = () => {
   return (
     <div className="mx-8">
@@ -37,7 +39,9 @@ const ForgetPassword = () => {
               </label>
             </div>
 
-            <button className="font-medium text-success">Learn more</button>
+            <Link to="/login" className="text-success font-bold">
+              Login here 
+            </Link>
           </div>
           <button className=" bg-[#253D4E] w-[150px] py-3 rounded text-white font-medium mt-8  cursor-pointer hover:bg-success ease-in duration-300">
             Reset Password
