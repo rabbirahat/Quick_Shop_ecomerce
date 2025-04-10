@@ -1,5 +1,10 @@
 import { ImCancelCircle } from "react-icons/im";
 const CartItem = ({ item }) => {
+  const handleQuantityChange = (e) => {
+    const newQuantity = e.target.value;
+    // Update the quantity in the cart state or perform any other action
+    console.log(`Updated quantity for ${item.title}: ${newQuantity}`);
+  }
   return (
     <tr className="text-gray-500 text-sm md:text-base font-bold">
       <td className="px-4 py-4">
@@ -13,7 +18,7 @@ const CartItem = ({ item }) => {
       </td>
       <td className="px-4 py-4 text-lg md:text-2xl">${item.price.toFixed(2)}</td>
       <td className="px-4 py-4">
-        <input className="border rounded text-center w-14 md:w-20 py-1 md:py-2" type="number" value={item.quantity} />
+        <input onChange={()=>handleQuantityChange() } className="border rounded text-center w-14 md:w-20 py-1 md:py-2" type="number" value={item.quantity} />
       </td>
       <td className="px-4 py-4 text-success text-lg md:text-2xl">
         ${(item.price * item.quantity).toFixed(2)}

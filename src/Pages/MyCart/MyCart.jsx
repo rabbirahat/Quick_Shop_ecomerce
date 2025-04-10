@@ -26,7 +26,7 @@ const cartItems = [
 
 
 // Main Cart Component
-const Cart = () => {
+const MyCart = () => {
   return (
     <div className="max-w-7xl w-full my-10 px-4 mx-auto">
       {/* Cart Header */}
@@ -84,4 +84,4 @@ const Cart = () => {
   );
 };
 
-export default Cart;
+export default MyCart;
