@@ -5,32 +5,56 @@ import { BsFacebook } from "react-icons/bs";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 import Swal from "sweetalert2";
+import useAxios from "../../Hook/useAxios";
+import GoogleLogin from "../../Components/GoogleLogin";
 
 const Signup = () => {
-  const { register, handleSubmit, reset, formState: { errors } } = useForm();
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
   const { createUser, updateUserProfile } = useContext(AuthContext);
   const navigate = useNavigate();
+  const axiosPublic = useAxios();
 
-  const onSubmit = data => {
+  const onSubmit = (data) => {
     if (data.password === data.confirm_password) {
       createUser(data.email, data.password)
-        .then(result => {
+        .then((result) => {
           const loggedUser = result.user;
           console.log(loggedUser);
           updateUserProfile(data.name, data.photoURL)
             .then(() => {
-              console.log("User profile info updated");
-              reset();
-              Swal.fire({
-                position: "top-end",
-                icon: "success",
-                title: "User created successfully.",
-                showConfirmButton: false,
-                timer: 1500,
+              const userInfo = {
+                name: data.name,
+                email: data.email,
+              };
+              axiosPublic.post("/users", userInfo).then((res) => {
+                if (res.data.insertedId) {
+                  console.log("user added to the database");
+                  reset();
+                  Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "User created successfully.",
+                    showConfirmButton: false,
+                    timer: 1500,
+                  });
+                  reset();
+                  Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "User created successfully.",
+                    showConfirmButton: false,
+                    timer: 1500,
+                  });
+                  navigate("/");
+                }
               });
-              navigate("/");
             })
-            .catch(error => {
+            .catch((error) => {
               console.error("Error updating profile:", error);
               Swal.fire({
                 icon: "error",
@@ -39,7 +63,7 @@ const Signup = () => {
               });
             });
         })
-        .catch(error => {
+        .catch((error) => {
           console.error("Error creating user:", error);
           Swal.fire({
             icon: "error",
@@ -146,16 +170,7 @@ const Signup = () => {
               Facebook
             </span>
           </button>
-          <button className=" bg-[#FFFFFF] w-full py-3 rounded-md  shadow-lg border text-[#7E7E7E] mt-6 translate-y-0 hover:-translate-y-1 duration-300">
-            <span className="flex items-center gap-4 justify-center">
-              <img
-                className="w-8 h-8"
-                src="https://img.icons8.com/fluency/2x/google-logo.png"
-                alt=""
-              />
-              Continue with Google
-            </span>
-          </button>
+         <GoogleLogin/>
           <button className=" bg-[#000000] w-full py-3 rounded-md text-white mt-6 translate-y-0 hover:-translate-y-1 duration-300">
             <span className="flex items-center gap-4 justify-center ">
               <AiFillApple className="w-8 h-8"></AiFillApple> Continue with
