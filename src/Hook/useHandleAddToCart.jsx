@@ -7,23 +7,20 @@ import useCart from "./useCarts";
 const useHandleAddToCart = () => {
   const navigate = useNavigate();
   const { user } = useAuth();
-  const [,refetch] = useCart();
+  const [, refetch] = useCart();
 
   const handleAddToCart = async (productData) => {
     if (user && user.email) {
       const cartItem = {
         menuId: productData._id,
         email: user.email,
-        productData,
+        quantity: 1, // Default quantity for new additions
       };
 
       try {
         const res = await axiosPublic.post("/carts", cartItem);
 
-        const inserted = res.data.insertedId;
-        const modified = res.data.modifiedCount > 0;
-
-        if (res.status === 201 || inserted || modified) {
+        if (res.status === 201) {
           Swal.fire({
             position: "top-end",
             icon: "success",
@@ -31,11 +28,22 @@ const useHandleAddToCart = () => {
             showConfirmButton: false,
             timer: 1500,
           });
-          refetch(); 
+          refetch();
+        } else if (res.status === 200) {
+          // Optional: notify if quantity updated (if backend ever uses 200 for that)
+          Swal.fire({
+            position: "top-end",
+            icon: "info",
+            title: "Product already in cart. Quantity updated!",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+          refetch();
         }
       } catch (error) {
         const status = error.response?.status;
-        const message = error.response?.data?.message || "Something went wrong.";
+        const message =
+          error.response?.data?.message || "Something went wrong.";
 
         let icon = "error";
         if (status === 409) icon = "info"; // Already in cart

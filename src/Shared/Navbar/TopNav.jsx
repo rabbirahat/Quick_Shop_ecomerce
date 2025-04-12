@@ -105,7 +105,6 @@ const AccountDropdown = () => {
 const CartWishlistIcons = () => {
   const { user } = useContext(AuthContext);
   const [{cart}] = useCart();
-  console.log(cart);
   return (
     <ul className="flex font-lato items-center justify-between gap-5 font-base font-medium mr-5">
       <li>
