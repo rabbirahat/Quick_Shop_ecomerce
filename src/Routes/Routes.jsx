@@ -16,8 +16,8 @@ import MyAddress from "../Pages/Dashboard/MyAddress";
 import MyOrders from "../Pages/Dashboard/MyOrders";
 import AccountDetails from "../Pages/Dashboard/AccountDetails";
 import ProductDetails from "../Pages/ProductDetails/ProductDetails";
-import Cart from "../Pages/MyCart/MyCart";
 import ForgetPassword from "../Pages/ForgetPassword/ForgetPassword";
+import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
   {
@@ -49,22 +49,9 @@ export const router = createBrowserRouter([
         element: <ForgetPassword />,
       },
       {
-        path: "/cart",
-        element: <Cart />,
-      },
-      {
-        path: "/checkout",
-        element: <Checkout />,
-      },
-      {
         path: "/contact",
         element: <Contact />,
       },
-      {
-        path: "/not-found",
-        element: <NotFound />,
-      },
-
       {
         path: "/product/:id",
         element: <ProductDetails />,
@@ -74,8 +61,16 @@ export const router = createBrowserRouter([
         element: <Menu />,
       },
       {
+        path: "/cart",
+        element: <PrivateRoute><MyCart /></PrivateRoute>,
+      },
+      {
+        path: "/checkout",
+        element: <PrivateRoute><Checkout /></PrivateRoute> ,
+      },
+      {
         path: "/dashboard",
-        element: <Dashboard />,
+        element:  <PrivateRoute><Dashboard /></PrivateRoute>,
         children: [
           {
             path: "trackorder",

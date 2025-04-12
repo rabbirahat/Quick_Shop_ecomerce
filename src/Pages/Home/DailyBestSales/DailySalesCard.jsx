@@ -3,8 +3,10 @@ import { AiOutlineHeart, AiOutlineShoppingCart } from "react-icons/ai";
 import { FiEye } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import ProductInfoCard from "../../../Components/ProductInfoCard";
+import useHandleAddToCart from "../../../Hook/useHandleAddToCart";
 
 const DailySalesCard = ({ productData }) => {
+  const handleAddToCart = useHandleAddToCart();
   // Logic for determining the badge color
   const getBadgeColor = (badge) => {
     if (badge === "Hot") {
@@ -20,8 +22,6 @@ const DailySalesCard = ({ productData }) => {
       return "";
     }
   };
-
-
 
   return (
     <div className="max-w-sm border border-[#BCE3C9] rounded-lg overflow-hidden group mx-auto">
@@ -55,27 +55,28 @@ const DailySalesCard = ({ productData }) => {
           >
             <AiOutlineHeart />
           </a>
-          <a
-            href="#"
+
+          <Link
+            to={`/product/${productData._id}`}
             className="text-2xl text-[#3BB77E] p-2 flex items-center justify-center transition"
           >
             <FiEye />
-          </a>
+          </Link>
         </div>
       </div>
       <div className="p-3">
-      <ProductInfoCard productData={productData} />
+        <ProductInfoCard productData={productData} />
         <progress
           className="progress progress-success "
           value={productData.sales}
           max={productData.stock}
         ></progress>
-        <Link className="" to={"/cart"}>
-          <button className="w-full justify-center bg-success flex items-center text-white px-3 py-1 rounded my-4 btn-hover">
-            <AiOutlineShoppingCart className="m-2 p=2" />
-            <p className="font-[12px] ">Shop Now</p>
+          <button
+            onClick={() => handleAddToCart(productData)}
+            className="w-full justify-center bg-success flex items-center text-white px-3 rounded my-4 btn-hover py-2"
+          >
+            <AiOutlineShoppingCart className="mr-2" /> Add To Cart
           </button>
-        </Link>
       </div>
     </div>
   );

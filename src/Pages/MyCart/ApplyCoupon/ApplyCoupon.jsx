@@ -1,14 +1,48 @@
 import React, { useState } from "react";
+import useAuth from "../../../Hook/useAuth";
+import useCart from "../../../Hook/useCarts";
+import Swal from "sweetalert2";
+import useAxiosSecure from "../../../Hook/useAxiosSecure";
 
 const ApplyCoupon = () => {
   const [coupon, setCoupon] = useState("");
+  const axiosSecure = useAxiosSecure();
+  const { user } = useAuth();
+  const [, refetch] = useCart();
 
-  const applyCoupon = () => {
-    if (coupon) {
-      alert(`Coupon "${coupon}" applied!`);
-      setCoupon("");
-    } else {
-      alert("Please enter a coupon code.");
+  const applyCoupon = async () => {
+    if (!coupon) {
+      return Swal.fire({
+        icon: "warning",
+        title: "Please enter a coupon code.",
+      });
+    }
+
+    try {
+      console.log(user?.email, coupon); 
+      const res = await axiosSecure.post("/carts/coupon", {
+        email: user?.email,
+        coupon,
+      });
+
+      if (res.status === 200) {
+        Swal.fire({
+          icon: "success",
+          title: "Coupon Applied",
+          text: `Coupon "${coupon}" has been applied successfully!`,
+          timer: 2000,
+          position: "top-end",
+          showConfirmButton: false,
+        });
+        setCoupon("");
+        refetch(); // Refresh summary and cart to reflect the applied coupon
+      }
+    } catch (error) {
+      Swal.fire({
+        icon: "error",
+        title: "Failed to apply coupon",
+        text: error.response?.data?.message || "Something went wrong.",
+      });
     }
   };
 

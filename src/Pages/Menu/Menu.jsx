@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import FilterSidebar from "./FilterSidebar/FilterSidebar";
 import ProductCard from "./ProductGrid/ProductCard";
 import header_blog from "../../assets/blogs/header-blog.png"
+import { axiosPublic } from "../../Hook/useAxios";
 
 
 
@@ -17,13 +18,11 @@ const Menu = () => {
   });
 
   const [products, setProducts] = useState([]);
-  useEffect(() => {
-    fetch("products.json")
-      .then((res) => res.json())
-      .then((data) => {
-        setProducts(data);
+    useEffect(() => {
+      axiosPublic.get(`/products`).then((res) => {
+        setProducts(res.data);
       });
-  },[]);
+    }, []);
 
   const popularItems = [
     

@@ -18,7 +18,7 @@ const Card_sm = ({ product }) => {
         className="w-[102px] h-[102px]"
       />
       <div className="pl-7 ">
-        <Link to={`/product/${product.id}`} className="">
+        <Link to={`/product/${product._id}`} className="">
           <h2 className="font-bold leading-5">{product.title}</h2>
         </Link>
 

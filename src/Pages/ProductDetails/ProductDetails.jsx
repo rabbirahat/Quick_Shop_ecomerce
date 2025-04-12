@@ -3,46 +3,37 @@ import {
   AiOutlineHeart,
   AiOutlineShareAlt,
   AiOutlineShoppingCart,
-  AiFillStar,
 } from "react-icons/ai";
 import { FaCaretDown, FaCaretUp } from "react-icons/fa";
 import ProductGallery from "./ProductGallery/ProductGallery";
 import { useLocation } from "react-router-dom";
 import ProductTab from "./ProductTab/ProductTab";
-
+import { Rating, Star } from "@smastrom/react-rating";
+import { axiosPublic } from "../../Hook/useAxios";
+import useHandleAddToCart from "../../Hook/useHandleAddToCart";
 
 
 const ProductDetails = () => {
-  const [products, setProducts] = useState([]);
+  const [product, setProduct] = useState([]);
   const [quantity, setQuantity] = useState(1);
   const [activeTab, setActiveTab] = useState("description");
+  const handleAddToCart = useHandleAddToCart();
 
-  useEffect(() => {
-    fetch("/products.json") // Ensure it is an absolute path
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error(`HTTP error! Status: ${res.status}`);
-        }
-        return res.json();
-      })
-      .then((data) => {
-        setProducts(data);
-      })
-      .catch((error) => {
-        console.error("Error fetching products:", error);
-      });
-  }, []);
   const location = useLocation();
-  useEffect(() => {
-    window.scrollTo(0, 0); 
-  }, [location]);
 
-  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+  const [loading, setLoading] = useState(true);
 
   const productId = parseInt(window.location.pathname.split("/").pop());
 
-  // Find the product based on ID
-  const product = products.find((item) => item.id === productId);
+  useEffect(() => {
+    axiosPublic.get(`/products/product/${productId}`).then((res) => {
+      setProduct(res.data);
+      setLoading(false);
+    });
+  }, [productId]);
 
   const handleDecrease = () => {
     if (quantity > 1) setQuantity(quantity - 1);
@@ -56,10 +47,21 @@ const ProductDetails = () => {
     setActiveTab(tab);
   };
 
-
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <div className="loader"></div>
+      </div>
+    );
+  }
+  const RatingStyles = {
+    itemShapes: Star,
+    activeFillColor: "#ffb700",
+    inactiveFillColor: "#ddd",
+  };
 
   return (
-    <div  className="container mx-auto px-4 md:px-8 mb-16">
+    <div className="container mx-auto px-4 md:px-8 mb-16">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>{product && <ProductGallery images={product.images} />}</div>
         <div>
@@ -69,9 +71,12 @@ const ProductDetails = () => {
           <h1 className="text-3xl font-bold text-gray-800">{product?.title}</h1>
           <div className="flex items-center mt-2">
             <div className="flex text-yellow-400">
-              {[...Array(5)].map((_, i) => (
-                <AiFillStar key={i} className="text-xl" />
-              ))}
+              <Rating
+                style={{ maxWidth: 100 }}
+                value={product?.rating}
+                itemStyles={RatingStyles}
+                readOnly
+              />
             </div>
             <span className="text-gray-500 text-sm ml-2">
               ({product?.rating})
@@ -99,7 +104,10 @@ const ProductDetails = () => {
                 </button>
               </div>
             </div>
-            <button className="btn-hover text-white bg-success font-semibold px-4 py-2 flex items-center gap-2 rounded-md ml-4 hover:bg-[#3BB77E] hover:text-white transition">
+            <button
+              onClick={() => handleAddToCart(product)}
+              className="btn-hover text-white bg-success font-semibold px-4 py-2 flex items-center gap-2 rounded-md ml-4 hover:bg-[#3BB77E] hover:text-white transition"
+            >
               <AiOutlineShoppingCart /> Add To Cart
             </button>
             <button className="ml-4 text-gray-600 hover:text-[#3BB78F] transition">
@@ -122,7 +130,11 @@ const ProductDetails = () => {
       </div>
 
       {/* Product Tabs */}
-  <ProductTab product={product} activeTab={activeTab} handleTabClick={handleTabClick} />
+      <ProductTab
+        product={product}
+        activeTab={activeTab}
+        handleTabClick={handleTabClick}
+      />
     </div>
   );
 };
