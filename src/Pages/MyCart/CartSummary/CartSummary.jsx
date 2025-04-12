@@ -3,6 +3,7 @@ import useCart from "../../../Hook/useCarts";
 import useAxiosSecure from "../../../Hook/useAxiosSecure";
 import Swal from "sweetalert2";
 import useAuth from "../../../Hook/useAuth";
+import { Link } from "react-router-dom";
 
 const CartSummary = () => {
   const [cartData, refetch] = useCart();
@@ -79,10 +80,11 @@ const CartSummary = () => {
         Total:{" "}
         <span className="text-success text-2xl">${total.toFixed(2)}</span>
       </p>
-
+      <Link to="/checkout">
       <button className="mt-5 btn btn-success btn-hover border-0 w-full py-3 text-white rounded-md">
         Proceed to Checkout
       </button>
+      </Link>
     </div>
   );
 };
