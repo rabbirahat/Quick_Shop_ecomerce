@@ -1,19 +1,20 @@
-import React, { useContext } from 'react';
-import { BsBag, BsCartDash } from 'react-icons/bs';
-import { FiLogOut, FiUser } from 'react-icons/fi';
-import { GoLocation } from 'react-icons/go';
-import { RiListSettingsLine } from 'react-icons/ri';
-import { Link, Outlet, useNavigate } from 'react-router-dom';
-import CustomLink from '../CustomLink/CustomLink';
-import { AuthContext } from '../../Providers/AuthProvider';
-
+import React, { useContext } from "react";
+import { BsBag, BsCartDash } from "react-icons/bs";
+import { FiLogOut, FiUser } from "react-icons/fi";
+import { GoLocation } from "react-icons/go";
+import { RiListSettingsLine } from "react-icons/ri";
+import { Link, Outlet, useNavigate } from "react-router-dom";
+import CustomLink from "../CustomLink/CustomLink";
+import { AuthContext } from "../../Providers/AuthProvider";
+import useAdmin from "../../Hook/useAdmin";
 
 const Dashboard = () => {
   const navigate = useNavigate();
-    const {user, logOut } = useContext(AuthContext);
-const[isAdmin, setIsAdmin] = React.useState(false)
+  const { user, logOut } = useContext(AuthContext);
+  const [isAdmin] = useAdmin();
+
   const handleLogout = () => {
-    logOut()
+    logOut();
     navigate("/login");
   };
 
@@ -25,7 +26,9 @@ const[isAdmin, setIsAdmin] = React.useState(false)
             <RiListSettingsLine className="block text-xl mr-4 ml-4" /> Dashboard
           </span>
         </Link>
-        <h1 className="text-4xl font-bold text-success ml-2">Hello {user?.displayName || "User"}!</h1>
+        <h1 className="text-4xl font-bold text-success ml-2">
+          Hello {user?.displayName || "User"}!
+        </h1>
       </div>
 
       <div className="lg:max-w-7xl md-w-full mx-auto md:flex gap-16">
@@ -36,11 +39,12 @@ const[isAdmin, setIsAdmin] = React.useState(false)
             </span>
           </CustomLink>
 
-          {!isAdmin ?
+          {!isAdmin ? (
             <>
               <Link to="trackorder">
                 <span className="flex items-center border border-[#E5E5E5] h-[50px] w-[220px] mb-3 rounded-lg font-semibold hover:border-success hover:shadow-md">
-                  <BsCartDash className="block text-xl mr-4 ml-4" /> Track Your Order
+                  <BsCartDash className="block text-xl mr-4 ml-4" /> Track Your
+                  Order
                 </span>
               </Link>
               <Link to="myaddress">
@@ -54,8 +58,7 @@ const[isAdmin, setIsAdmin] = React.useState(false)
                 </span>
               </Link>
             </>
-          
-       :
+          ) : (
             <>
               <Link to="manageproducts">
                 <span className="flex items-center border border-[#E5E5E5] h-[50px] w-[220px] mb-3 rounded-lg font-semibold hover:border-success hover:shadow-md">
@@ -68,20 +71,12 @@ const[isAdmin, setIsAdmin] = React.useState(false)
                 </span>
               </Link>
             </>
-          }
-
+          )}
           <button
             onClick={handleLogout}
             className="flex items-center border border-[#E5E5E5] h-[50px] w-[220px] mb-3 rounded-lg font-semibold hover:border-success hover:shadow-md text-left px-4"
           >
             <FiLogOut className="text-xl mr-4" /> Log out
-          </button>
-
-          <button
-            onClick={()=>setIsAdmin(!isAdmin)}
-            className="flex items-center border border-[#E5E5E5] h-[50px] w-[220px] mb-3 rounded-lg font-semibold hover:border-success hover:shadow-md text-left px-4"
-          >
-            <FiLogOut className="text-xl mr-4" />toggle admin
           </button>
         </div>
 

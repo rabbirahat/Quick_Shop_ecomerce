@@ -62,11 +62,10 @@ const AuthProvider = ({ children }) => {
         axiosPublic.post("/jwt", userInfo).then((res) => {
           if (res.data.token) {
             localStorage.setItem("access-token", res.data.token);
-            console.log(localStorage.getItem("access-token"));
           }
         });
       } else {
-        // TODO: remove token (if token stored in the client side: Local storage, caching, in memory)
+     
         localStorage.removeItem("access-token");
       }
       setLoading(false);
