@@ -10,14 +10,15 @@ import About from "../Pages/About/About";
 import Login from "../Pages/Login/Login";
 import Signup from "../Pages/Signup/Signup";
 import Menu from "../Pages/Menu/Menu";
-import Dashboard from "../Pages/Dashboard/Dashboard";
-import TrackYourOrder from "../Pages/Dashboard/TrackYourOrder";
 import MyAddress from "../Pages/Dashboard/MyAddress";
-import MyOrders from "../Pages/Dashboard/MyOrders";
-import AccountDetails from "../Pages/Dashboard/AccountDetails";
-import ProductDetails from "../Pages/ProductDetails/ProductDetails";
 import ForgetPassword from "../Pages/ForgetPassword/ForgetPassword";
 import PrivateRoute from "./PrivateRoute";
+import Dashboard from "../Pages/Dashboard/Dashboard";
+import MyOrders from "../Pages/Dashboard/Privateuser/MyOrders";
+import AccountDetails from "../Pages/Dashboard/AccountDetails";
+import ProductDetails from "../Pages/ProductDetails/ProductDetails";
+import TrackYourOrder from "../Pages/Dashboard/Privateuser/TrackYourOrder";
+import AllUsers from "../Pages/Dashboard/Admin/AllUsers";
 
 export const router = createBrowserRouter([
   {
@@ -69,7 +70,7 @@ export const router = createBrowserRouter([
         element: <PrivateRoute><Checkout /></PrivateRoute> ,
       },
       {
-        path: "/dashboard",
+        path: "dashboard",
         element:  <PrivateRoute><Dashboard /></PrivateRoute>,
         children: [
           {
@@ -81,12 +82,17 @@ export const router = createBrowserRouter([
             element: <MyAddress />,
           },
           {
-            path: "myorders",
+            path: "orders",
             element: <MyOrders />,
           },
           {
             path: "accountdetails",
             element: <AccountDetails />,
+          },
+          //----admin routes-----//
+          {
+            path: "allusers",
+            element: <AllUsers />,
           },
         ],
       },
