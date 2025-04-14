@@ -7,17 +7,20 @@ import { Link, Outlet, useNavigate } from "react-router-dom";
 import CustomLink from "../CustomLink/CustomLink";
 import { AuthContext } from "../../Providers/AuthProvider";
 import useAdmin from "../../Hook/useAdmin";
+import useAuth from "../../Hook/useAuth";
 
 const Dashboard = () => {
   const navigate = useNavigate();
-  const { user, logOut } = useContext(AuthContext);
-  const [isAdmin] = useAdmin();
+  const { user, logOut } = useAuth()
+  const [isAdmin,isAdminLoading] = useAdmin();
 
   const handleLogout = () => {
     logOut();
     navigate("/login");
   };
-
+if(isAdminLoading) {
+    return <div className="flex justify-center items-center h-screen">Loading...</div>;
+  }
   return (
     <div className="w-full mt-8">
       <div className="md:flex gap-20">
@@ -62,7 +65,7 @@ const Dashboard = () => {
             <>
               <Link to="manageproducts">
                 <span className="flex items-center border border-[#E5E5E5] h-[50px] w-[220px] mb-3 rounded-lg font-semibold hover:border-success hover:shadow-md">
-                  <BsBag className="block text-xl mr-4 ml-4" /> Manage Products
+                  <BsBag className="block text-xl mr-4 ml-4" /> Manage Orders
                 </span>
               </Link>
               <Link to="allusers">
@@ -73,7 +76,7 @@ const Dashboard = () => {
             </>
           )}
           <button
-            onClick={handleLogout}
+            onClick={()=>handleLogout()}
             className="flex items-center border border-[#E5E5E5] h-[50px] w-[220px] mb-3 rounded-lg font-semibold hover:border-success hover:shadow-md text-left px-4"
           >
             <FiLogOut className="text-xl mr-4" /> Log out

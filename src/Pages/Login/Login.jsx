@@ -22,8 +22,7 @@ const Login = () => {
 
   const onSubmit = (data) => {
     signIn(data.email, data.password).then((result) => {
-      const user = result.user;
-      console.log(user);
+      console.log(localStorage.getItem("access-token"));  
       Swal.fire({
         title: "User Login Successful.",
         showClass: {
@@ -38,7 +37,10 @@ const Login = () => {
     });
   };
 
-  console.log(errors);
+  if (Object.keys(errors).length > 0) {
+    console.log("Form Errors:", errors);
+  }
+  
   return (
     <div>
       <div className="lg:flex lg:justify-center gap-10 mt-14 mx-8">
@@ -59,16 +61,23 @@ const Login = () => {
             </Link>
           </p>
           <form onSubmit={handleSubmit(onSubmit)}>
+            {errors.email && (
+              <p className="text-red-500 text-sm mb-2">Email is required</p>
+            )}
             <input
               type="email"
               {...register("email", { required: true })}
-              className="py-3 px-3 border border-[ #E5E5E5] rounded w-full mb-4"
+              className="py-3 px-3 border border-[#E5E5E5] rounded w-full mb-4"
               placeholder="Your Email Address"
             />
+
+            {errors.password && (
+              <p className="text-red-500 text-sm mb-2">Password is required</p>
+            )}
             <input
               type="password"
               {...register("password", { required: true })}
-              className="py-3 px-3 border border-[ #E5E5E5] rounded w-full mb-4"
+              className="py-3 px-3 border border-[#E5E5E5] rounded w-full mb-4"
               placeholder="Your Password"
             />
             <div className="flex justify-between">
@@ -85,7 +94,10 @@ const Login = () => {
                   Remember me
                 </label>
               </div>
-              <Link to="/forget-password" className="font-medium text-[#B6B6B6]">
+              <Link
+                to="/forget-password"
+                className="font-medium text-[#B6B6B6]"
+              >
                 Forget Password
               </Link>
             </div>
@@ -98,7 +110,7 @@ const Login = () => {
                 Login
               </span>
             </button>
-         <GoogleLogin/>
+            <GoogleLogin />
           </form>
         </div>
       </div>

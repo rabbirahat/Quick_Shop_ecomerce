@@ -5,8 +5,9 @@ import { BsFacebook } from "react-icons/bs";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 import Swal from "sweetalert2";
-import useAxios from "../../Hook/useAxios";
+
 import GoogleLogin from "../../Components/GoogleLogin";
+import useAxios from "../../Hook/useAxios";
 
 const Signup = () => {
   const {
@@ -15,9 +16,10 @@ const Signup = () => {
     reset,
     formState: { errors },
   } = useForm();
-  const { createUser, updateUserProfile } = useContext(AuthContext);
+  const { createUser, updateUserProfile,loading } = useContext(AuthContext);
+  const axiosPublic =useAxios()
   const navigate = useNavigate();
-  const axiosPublic = useAxios();
+  
 
   const onSubmit = (data) => {
     if (data.password === data.confirm_password) {
@@ -34,14 +36,6 @@ const Signup = () => {
               axiosPublic.post("/users", userInfo).then((res) => {
                 if (res.data.insertedId) {
                   console.log("user added to the database");
-                  reset();
-                  Swal.fire({
-                    position: "top-end",
-                    icon: "success",
-                    title: "User created successfully.",
-                    showConfirmButton: false,
-                    timer: 1500,
-                  });
                   reset();
                   Swal.fire({
                     position: "top-end",
@@ -79,6 +73,14 @@ const Signup = () => {
       });
     }
   };
+
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <div className="loader"></div>
+      </div>
+    );
+  }
 
   return (
     <div>

@@ -16,7 +16,7 @@ import Swal from "sweetalert2";
 
 
 const MyCart = () => {
-  const [cart , refetch] = useCart();
+  const [cart , refetch, isLoading] = useCart();
   const axiosSecure = useAxiosSecure();
   const { user } = useAuth();
   // console.log(cart);
@@ -46,6 +46,14 @@ const MyCart = () => {
       });
     }
   };
+
+  if (isLoading) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <div className="loader"></div>
+      </div>
+    );
+  }
 
   return (
     <div className="max-w-7xl w-full my-10 px-4 mx-auto">

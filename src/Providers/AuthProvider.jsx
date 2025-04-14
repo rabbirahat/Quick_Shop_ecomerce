@@ -53,9 +53,9 @@ const AuthProvider = ({ children }) => {
       photoURL: photo,
     });
   };
-
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setLoading(true);
       setUser(currentUser);
       if (currentUser) {
         const userInfo = { email: currentUser.email };
@@ -65,7 +65,6 @@ const AuthProvider = ({ children }) => {
           }
         });
       } else {
-     
         localStorage.removeItem("access-token");
       }
       setLoading(false);

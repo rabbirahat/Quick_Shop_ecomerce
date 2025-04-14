@@ -7,7 +7,7 @@ import useAxiosSecure from "./useAxiosSecure";
 const useHandleAddToCart = () => {
   const navigate = useNavigate();
   const { user } = useAuth();
-  const [, refetch] = useCart();
+  const [, refetch,isLoading] = useCart();
 const axiosSecure = useAxiosSecure();
 
   const handleAddToCart = async (productData) => {
@@ -74,6 +74,10 @@ const axiosSecure = useAxiosSecure();
       });
     }
   };
+
+  if (isLoading) {
+    return <div className="text-center">Loading...</div>; // Optional loading state
+  }
 
   return handleAddToCart;
 };

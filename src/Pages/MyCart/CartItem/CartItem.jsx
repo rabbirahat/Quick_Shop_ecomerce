@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 import { ImCancelCircle } from "react-icons/im";
-import useAxiosSecure from "../../../Hook/useAxios";
+import useAxiosSecure from "../../../Hook/useAxiosSecure";
 import Swal from "sweetalert2";
 import useAuth from "../../../Hook/useAuth";
 
 const CartItem = ({ item, refetch }) => {
   const [quantity, setQuantity] = useState(item.quantity || 1);
   const axiosSecure = useAxiosSecure();
-  const {user} = useAuth();
+  const { user } = useAuth();
 
   const handleQuantityChange = async (e) => {
     const newQuantity = parseInt(e.target.value);
     setQuantity(newQuantity);
-  
+    console.log("handleQuantity", user.email, item._id, newQuantity); // Log the values for debugging
     try {
       await axiosSecure.patch("/carts/update", {
         email: user.email,
@@ -28,15 +28,13 @@ const CartItem = ({ item, refetch }) => {
       });
     }
   };
-  
-
 
   const handleDeleteCartItem = async () => {
     try {
       const res = await axiosSecure.delete("/carts", {
         data: { email: user.email, menuId: item._id }, // Send email and menuId to the backend
       });
-  
+
       if (res.status === 200) {
         Swal.fire({
           icon: "success",
@@ -55,7 +53,6 @@ const CartItem = ({ item, refetch }) => {
       });
     }
   };
-
 
   return (
     <tr className="text-gray-500 text-sm md:text-base font-bold">
