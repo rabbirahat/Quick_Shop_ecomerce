@@ -1,11 +1,9 @@
-import React, { useContext } from "react";
 import { BsBag, BsCartDash } from "react-icons/bs";
 import { FiLogOut, FiUser } from "react-icons/fi";
 import { GoLocation } from "react-icons/go";
 import { RiListSettingsLine } from "react-icons/ri";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import CustomLink from "../CustomLink/CustomLink";
-import { AuthContext } from "../../Providers/AuthProvider";
 import useAdmin from "../../Hook/useAdmin";
 import useAuth from "../../Hook/useAuth";
 
@@ -43,6 +41,7 @@ if(isAdminLoading) {
           </CustomLink>
 
           {!isAdmin ? (
+            // <-------------------User Links------------>
             <>
               <Link to="trackorder">
                 <span className="flex items-center border border-[#E5E5E5] h-[50px] w-[220px] mb-3 rounded-lg font-semibold hover:border-success hover:shadow-md">
@@ -62,7 +61,13 @@ if(isAdminLoading) {
               </Link>
             </>
           ) : (
+            // <-------------------Admin Links------------>
             <>
+              <Link to="addproduct">
+                <span className="flex items-center border border-[#E5E5E5] h-[50px] w-[220px] mb-3 rounded-lg font-semibold hover:border-success hover:shadow-md">    
+                  <BsBag className="block text-xl mr-4 ml-4" /> Add Product
+                </span>
+              </Link>
               <Link to="manageproducts">
                 <span className="flex items-center border border-[#E5E5E5] h-[50px] w-[220px] mb-3 rounded-lg font-semibold hover:border-success hover:shadow-md">
                   <BsBag className="block text-xl mr-4 ml-4" /> Manage Orders

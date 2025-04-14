@@ -19,3 +19,13 @@
 .input-style {
   @apply w-full pl-4 py-2 my-4 rounded-lg border border-gray-300;
 }
+
+.input {
+  @apply w-full border px-4 py-2 rounded shadow-sm focus:ring-2 focus:ring-success outline-none;
+}
+.textarea {
+  @apply w-full border px-4 py-2 rounded shadow-sm min-h-[100px] focus:ring-2 focus:ring-success outline-none;
+}
+.label {
+  @apply block text-sm font-medium text-gray-600 mb-1;
+}
