@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../../Hook/useAxiosSecure";
 import useAxios from "../../../../Hook/useAxios";
+import { useNavigate } from "react-router-dom";
 
 const AddProduct = () => {
   const { register, handleSubmit, reset } = useForm();
@@ -10,6 +11,7 @@ const AddProduct = () => {
   const [loading, setLoading] = useState(false);
   const axiosSecure = useAxiosSecure();
   const axiosPublic = useAxios();
+   const navigate = useNavigate();
 
   const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
   const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
@@ -74,6 +76,7 @@ const AddProduct = () => {
       const res = await axiosSecure.post("/products", newProduct);
       if (res.data.insertedId) {
         reset();
+        navigate(`/dashboard/allproduct`); 
         Swal.fire({
           position: "top-end",
           icon: "success",

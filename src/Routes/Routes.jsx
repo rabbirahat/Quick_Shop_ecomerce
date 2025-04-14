@@ -22,6 +22,8 @@ import AllUsers from "../Pages/Dashboard/Admin/AllUsers";
 import AdminRoute from "./AdminRoute";
 import ManageOrders from "../Pages/Dashboard/Admin/ManageOrders";
 import AddProduct from "../Pages/Dashboard/Admin/AddProduct/AddProduct";
+import AllProducts from "../Pages/Dashboard/Admin/AllProducts/AllProducts";
+import EditProduct from "../Pages/Dashboard/Admin/AllProducts/EditProduct";
 
 export const router = createBrowserRouter([
   {
@@ -66,15 +68,27 @@ export const router = createBrowserRouter([
       },
       {
         path: "/cart",
-        element: <PrivateRoute><MyCart /></PrivateRoute>,
+        element: (
+          <PrivateRoute>
+            <MyCart />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/checkout",
-        element: <PrivateRoute><Checkout /></PrivateRoute> ,
+        element: (
+          <PrivateRoute>
+            <Checkout />
+          </PrivateRoute>
+        ),
       },
       {
         path: "dashboard",
-        element:  <PrivateRoute><Dashboard /></PrivateRoute>,
+        element: (
+          <PrivateRoute>
+            <Dashboard />
+          </PrivateRoute>
+        ),
         children: [
           {
             path: "trackorder",
@@ -94,16 +108,44 @@ export const router = createBrowserRouter([
           },
           //----admin routes-----//
           {
+            path: "/dashboard/edit-product/:id",
+            element: (
+              <AdminRoute>
+                <EditProduct />,
+              </AdminRoute>
+            ),
+          },
+          {
+            path: "allproduct",
+            element: (
+              <AdminRoute>
+                <AllProducts />
+              </AdminRoute>
+            ),
+          },
+          {
             path: "addproduct",
-            element: <AdminRoute><AddProduct /></AdminRoute>,
+            element: (
+              <AdminRoute>
+                <AddProduct />
+              </AdminRoute>
+            ),
           },
           {
             path: "allusers",
-            element: <AdminRoute><AllUsers /></AdminRoute>,
+            element: (
+              <AdminRoute>
+                <AllUsers />
+              </AdminRoute>
+            ),
           },
           {
             path: "manageproducts",
-            element: <AdminRoute><ManageOrders /></AdminRoute>,
+            element: (
+              <AdminRoute>
+                <ManageOrders />
+              </AdminRoute>
+            ),
           },
         ],
       },
