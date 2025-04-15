@@ -50,7 +50,6 @@ const NavMenu = ({ links, onClick }) => {
   );
 };
 
-
 const CartWishlistIcons = () => {
   const { user } = useContext(AuthContext);
   const [{ cart }] = useCart();
@@ -125,7 +124,9 @@ const MobileNav = ({ isOpen, setIsOpen }) => (
         className="cursor-pointer w-16"
         onClick={() => setIsOpen(!isOpen)}
       />
-      <img className="h-[62.17px]" src={logo} alt="logo" />
+      <Link to={"/"} >
+        <img className="h-[62.17px]" src={logo} alt="logo" />
+      </Link>
       <CartWishlistIcons />
     </div>
 
@@ -157,7 +158,9 @@ const MobileNav = ({ isOpen, setIsOpen }) => (
 const DesktopNav = () => (
   <div className="hidden lg:block">
     <div className="h-[128px] flex items-center justify-between">
+      <Link to={"/"} >
       <img className="h-[62.17px]" src={logo} alt="logo" />
+      </Link>
       <SearchBar />
       <div className="flex gap-5 items-center">
         <AccountDropdown />

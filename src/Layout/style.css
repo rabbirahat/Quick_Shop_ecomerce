@@ -1,5 +1,13 @@
 @import "tailwindcss";
 @plugin "daisyui";
+:root {
+  color-scheme: light !important;
+}
+
+body {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
 
 @theme {
   --color-success: #3BB77E;
