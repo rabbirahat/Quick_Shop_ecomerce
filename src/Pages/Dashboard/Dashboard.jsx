@@ -59,11 +59,11 @@ const Dashboard = () => {
                   <GoLocation className="block text-xl mr-4 ml-4" /> My Address
                 </span>
               </Link>
-              <Link to="accountdetails">
+              {/* <Link to="accountdetails">
                 <span className="flex items-center border border-[#E5E5E5] h-[50px] w-[220px] mb-3 rounded-lg font-semibold hover:border-success hover:shadow-md">
                   <FiUser className="block text-xl mr-4 ml-4" /> Account Details
                 </span>
-              </Link>
+              </Link> */}
             </>
           ) : (
             // <-------------------Admin Links------------>

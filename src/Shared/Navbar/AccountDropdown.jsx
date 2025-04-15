@@ -12,10 +12,10 @@ import useAdmin from "../../Hook/useAdmin";
 
 // Account links for customer users
 const CustomerAccountLinks = [
-  { path: "/dashboard/accountdetails", label: "My Account", icon: <FiUser /> },
+  // { path: "/dashboard/accountdetails", label: "My Account", icon: <FiUser /> },
+  { path: "/dashboard/orders", label: "My Orders", icon: <BiMessageSquareDetail /> },
   { path: "/dashboard/trackorder", label: "Order Tracking", icon: <GoLocation /> },
-  { path: "/dashboard/orders", label: "My Vouchers", icon: <BiMessageSquareDetail /> },
-  { path: "/dashboard/myaddress", label: "Settings", icon: <RiListSettingsFill /> },
+  { path: "/dashboard/myaddress", label: "Profile", icon: <RiListSettingsFill /> },
 ];
 
 // Account links for admin users

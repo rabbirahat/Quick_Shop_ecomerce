@@ -56,7 +56,8 @@ const Checkout = () => {
     const total = subtotal - discountAmount;
 
     const order = {
-      userEmail: data.email,
+      email: data.email,
+      userEmail: user?.email ,
       name: `${data.firstName} ${data.lastName}`,
       phone: data.phone,
       address: {

@@ -26,9 +26,6 @@ const MyAddress = () => {
 
     fetchUserInfo();
   }, [user]);
-  
-  console.log(userInfo);
-  
   const handleEditClick = (type) => {
       setEditType(type);
       setFormData(userInfo?.addresses?.[type] || {});
