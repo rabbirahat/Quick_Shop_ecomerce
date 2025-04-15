@@ -20,7 +20,7 @@ const CustomerAccountLinks = [
 
 // Account links for admin users
 const AdminAccountLinks = [
-  { path: "/dashboard/accountdetails", label: "My Account", icon: <FiUser /> },
+  // { path: "/dashboard/accountdetails", label: "My Account", icon: <FiUser /> },
   { path: "/dashboard/trackorder", label: "Order Tracking", icon: <GoLocation /> },
   { path: "/dashboard/orders", label: "My Vouchers", icon: <BiMessageSquareDetail /> },
   { path: "/dashboard/myaddress", label: "Settings", icon: <RiListSettingsFill /> },
