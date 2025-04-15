@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { FiUser, FiLogOut } from "react-icons/fi";
 import { GoLocation } from "react-icons/go";
@@ -10,17 +10,14 @@ import { MdAddCircleOutline } from "react-icons/md";
 import { AuthContext } from "../../Providers/AuthProvider";
 import useAdmin from "../../Hook/useAdmin";
 
-// Account links for customer users
+// Static links
 const CustomerAccountLinks = [
-  // { path: "/dashboard/accountdetails", label: "My Account", icon: <FiUser /> },
   { path: "/dashboard/orders", label: "My Orders", icon: <BiMessageSquareDetail /> },
   { path: "/dashboard/trackorder", label: "Order Tracking", icon: <GoLocation /> },
   { path: "/dashboard/myaddress", label: "Profile", icon: <RiListSettingsFill /> },
 ];
 
-// Account links for admin users
 const AdminAccountLinks = [
-  // { path: "/dashboard/accountdetails", label: "My Account", icon: <FiUser /> },
   { path: "/dashboard/trackorder", label: "Order Tracking", icon: <GoLocation /> },
   { path: "/dashboard/orders", label: "My Vouchers", icon: <BiMessageSquareDetail /> },
   { path: "/dashboard/myaddress", label: "Settings", icon: <RiListSettingsFill /> },
@@ -35,65 +32,62 @@ const AccountDropdown = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isAdmin, isAdminLoading] = useAdmin();
 
-  const handleDropdownToggle = () => {
-    setIsDropdownOpen((prev) => !prev);
-  };
+  const linksToShow = useMemo(() => {
+    if (isAdminLoading) return [];
+    return isAdmin ? AdminAccountLinks : CustomerAccountLinks;
+  }, [isAdmin, isAdminLoading]);
 
-  const handleClose = () => {
-    setIsDropdownOpen(false);
-  };
-
-  if (isAdminLoading) return null;
-
-  const linksToShow = isAdmin ? AdminAccountLinks : CustomerAccountLinks;
+  const toggleDropdown = () => setIsDropdownOpen((prev) => !prev);
+  const closeDropdown = () => setIsDropdownOpen(false);
 
   return (
     <div
       className="relative group cursor-pointer"
       onMouseEnter={() => setIsDropdownOpen(true)}
-      onMouseLeave={() => setIsDropdownOpen(false)}
+      onMouseLeave={closeDropdown}
     >
-      <div
-        className="flex items-center font-medium whitespace-nowrap"
-        onClick={handleDropdownToggle}
-      >
+      <div className="flex items-center font-medium whitespace-nowrap" onClick={toggleDropdown}>
         Account <RiArrowDropDownLine className="w-6 h-6" />
       </div>
 
       {isDropdownOpen && (
         <ul className="absolute bg-base-100 rounded-box z-10 w-52 p-2 shadow-sm top-full">
           {user?.email ? (
-            <>
-              {linksToShow.map((item, index) => (
-                <Link
-                  key={index}
-                  to={item.path}
-                  onClick={handleClose}
-                  className="flex gap-2 items-center ml-4 mt-2 hover:text-success"
+            isAdminLoading ? (
+              <div className="ml-4 mt-2 text-gray-400 animate-pulse">Loading...</div>
+            ) : (
+              <>
+                {linksToShow.map((item, index) => (
+                  <Link
+                    key={index}
+                    to={item.path}
+                    onClick={closeDropdown}
+                    className="flex gap-2 items-center ml-4 mt-2 hover:text-success"
+                  >
+                    {item.icon}
+                    <span>{item.label}</span>
+                  </Link>
+                ))}
+                <button
+                  onClick={() => {
+                    logOut();
+                    closeDropdown();
+                  }}
+                  className="flex gap-2 items-center ml-4 mt-2 hover:text-success w-full text-left"
                 >
-                  {item.icon}
-                  <h1>{item.label}</h1>
-                </Link>
-              ))}
-              <button
-                onClick={() => {
-                  logOut();
-                  handleClose();
-                }}
-                className="flex gap-2 items-center ml-4 mt-2 hover:text-success w-full text-left"
-              >
-                <FiLogOut />
-                <h1>Sign Out</h1>
-              </button>
-            </>
+                  <FiLogOut />
+                  <span>Sign Out</span>
+                </button>
+              </>
+            )
           ) : (
             <Link
               to="/login"
-              onClick={handleClose}
+              onClick={closeDropdown}
               className="flex gap-2 items-center ml-4 mt-2 hover:text-success"
             >
               <FiUser />
-              <h1>Login</h1>
+              <span>Login</span>
             </Link>
           )}
         </ul>
