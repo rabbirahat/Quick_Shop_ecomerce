@@ -1,12 +1,11 @@
 import { BsBoxes, BsCartDash } from "react-icons/bs";
-import { FiLogOut, FiUser } from "react-icons/fi";
+import { FiLogOut, FiShoppingBag, FiUser } from "react-icons/fi";
 import { GoLocation } from "react-icons/go";
 import { RiListSettingsLine } from "react-icons/ri";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 
 import useAdmin from "../../Hook/useAdmin";
 import useAuth from "../../Hook/useAuth";
-import { IoMdAddCircle } from "react-icons/io";
 import { TfiShoppingCartFull } from "react-icons/tfi";
 import { MdAddCircleOutline } from "react-icons/md";
 
@@ -44,6 +43,11 @@ const Dashboard = () => {
           {!isAdmin ? (
             // <-------------------User Links------------>
             <>
+             <Link to="orders">
+                <span className="flex items-center border border-[#E5E5E5] h-[50px] w-[220px] mb-3 rounded-lg font-semibold hover:border-success hover:shadow-md">
+                  <FiShoppingBag className="block text-xl mr-4 ml-4" />Orders
+                </span>
+              </Link>
               <Link to="trackorder">
                 <span className="flex items-center border border-[#E5E5E5] h-[50px] w-[220px] mb-3 rounded-lg font-semibold hover:border-success hover:shadow-md">
                   <BsCartDash className="block text-xl mr-4 ml-4" /> Track Your

@@ -1,16 +1,11 @@
 import { useContext, useState } from "react";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import { BiMessageSquareDetail } from "react-icons/bi";
 import { BsHeart } from "react-icons/bs";
-import { FiLogOut, FiUser } from "react-icons/fi";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { GoLocation } from "react-icons/go";
-import { RiArrowDropDownLine, RiListSettingsFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import logo from "../../assets/QS_LOGO.png";
 import { AuthContext } from "../../Providers/AuthProvider";
 import useCart from "../../Hook/useCarts.jsx";
-import useAdmin from "../../Hook/useAdmin.jsx";
 import AccountDropdown from "./AccountDropdown.jsx";
 
 // Navigation Links
