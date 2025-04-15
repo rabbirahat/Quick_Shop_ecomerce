@@ -22,7 +22,6 @@ const Login = () => {
 
   const onSubmit = (data) => {
     signIn(data.email, data.password).then((result) => {
-      console.log(localStorage.getItem("access-token"));  
       Swal.fire({
         title: "User Login Successful.",
         showClass: {

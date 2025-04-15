@@ -140,7 +140,7 @@ export const router = createBrowserRouter([
             ),
           },
           {
-            path: "manageproducts",
+            path: "manageorders",
             element: (
               <AdminRoute>
                 <ManageOrders />

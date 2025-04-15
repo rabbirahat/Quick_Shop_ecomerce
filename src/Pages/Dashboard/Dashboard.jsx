@@ -64,7 +64,7 @@ const Dashboard = () => {
           ) : (
             // <-------------------Admin Links------------>
             <>
-              <Link to="manageproducts">
+              <Link to="manageorders">
                 <span className="flex items-center border border-[#E5E5E5] h-[50px] w-[220px] mb-3 rounded-lg font-semibold hover:border-success hover:shadow-md">
                   <TfiShoppingCartFull className="block text-xl mr-4 ml-4" />{" "}
                   Manage Orders
@@ -77,8 +77,7 @@ const Dashboard = () => {
               </Link>
               <Link to="addproduct">
                 <span className="flex items-center border border-[#E5E5E5] h-[50px] w-[220px] mb-3 rounded-lg font-semibold hover:border-success hover:shadow-md">
-                  <MdAddCircleOutline  className="block text-xl mr-4 ml-4" /> Add
-                  Product
+                  <MdAddCircleOutline  className="block text-xl mr-4 ml-4" /> Add Product
                 </span>
               </Link>
               <Link to="allusers">
