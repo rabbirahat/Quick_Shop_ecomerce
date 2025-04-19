@@ -18,7 +18,6 @@ const categories = [
 
 // Navigation Links
 const navLinks = [
-  "Home",
   "Hot Deals",
   "Food",
   "Vegetables",
@@ -73,13 +72,20 @@ const NavCategories = () => {
 
         {/* Navigation Links */}
         <ul className="flex flex-wrap gap-5">
-          {navLinks.map((link, index) => (
-            <li
-              key={index}
-              className="hover:text-success cursor-pointer font-medium"
-            >
-              <Link to="/">{link}</Link>
+          <Link to="/">
+            <li className="hover:text-success cursor-pointer font-medium">
+              Home
             </li>
+          </Link>
+          {navLinks.map((link, index) => (
+            <Link to="/menu">
+              <li
+                key={index}
+                className="hover:text-success cursor-pointer font-medium"
+              >
+                {link}
+              </li>
+            </Link>
           ))}
 
           {/* Pages Dropdown (Using Hover) */}

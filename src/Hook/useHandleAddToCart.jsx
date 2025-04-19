@@ -1,13 +1,14 @@
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import useAuth from "./useAuth";
-import { axiosPublic } from "./useAxios";
 import useCart from "./useCarts";
+import useAxiosSecure from "./useAxiosSecure";
 
 const useHandleAddToCart = () => {
   const navigate = useNavigate();
   const { user } = useAuth();
-  const [, refetch] = useCart();
+  const [, refetch,isLoading] = useCart();
+const axiosSecure = useAxiosSecure();
 
   const handleAddToCart = async (productData) => {
     if (user && user.email) {
@@ -18,7 +19,7 @@ const useHandleAddToCart = () => {
       };
 
       try {
-        const res = await axiosPublic.post("/carts", cartItem);
+        const res = await axiosSecure.post("/carts", cartItem);
 
         if (res.status === 201) {
           Swal.fire({
@@ -68,11 +69,15 @@ const useHandleAddToCart = () => {
         confirmButtonText: "Yes, login!",
       }).then((result) => {
         if (result.isConfirmed) {
-          navigate("/login", { state: { from: location } });
+          navigate("/login");
         }
       });
     }
   };
+
+  if (isLoading) {
+    return <div className="text-center">Loading...</div>; // Optional loading state
+  }
 
   return handleAddToCart;
 };

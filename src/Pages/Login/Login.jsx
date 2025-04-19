@@ -4,6 +4,7 @@ import { AiOutlineLogin } from "react-icons/ai";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 import Swal from "sweetalert2";
+import GoogleLogin from "../../Components/GoogleLogin";
 
 const Login = () => {
   const {
@@ -21,8 +22,6 @@ const Login = () => {
 
   const onSubmit = (data) => {
     signIn(data.email, data.password).then((result) => {
-      const user = result.user;
-      console.log(user);
       Swal.fire({
         title: "User Login Successful.",
         showClass: {
@@ -37,7 +36,10 @@ const Login = () => {
     });
   };
 
-  console.log(errors);
+  if (Object.keys(errors).length > 0) {
+    console.log("Form Errors:", errors);
+  }
+  
   return (
     <div>
       <div className="lg:flex lg:justify-center gap-10 mt-14 mx-8">
@@ -58,16 +60,23 @@ const Login = () => {
             </Link>
           </p>
           <form onSubmit={handleSubmit(onSubmit)}>
+            {errors.email && (
+              <p className="text-red-500 text-sm mb-2">Email is required</p>
+            )}
             <input
               type="email"
               {...register("email", { required: true })}
-              className="py-3 px-3 border border-[ #E5E5E5] rounded w-full mb-4"
+              className="py-3 px-3 border border-[#E5E5E5] rounded w-full mb-4"
               placeholder="Your Email Address"
             />
+
+            {errors.password && (
+              <p className="text-red-500 text-sm mb-2">Password is required</p>
+            )}
             <input
               type="password"
               {...register("password", { required: true })}
-              className="py-3 px-3 border border-[ #E5E5E5] rounded w-full mb-4"
+              className="py-3 px-3 border border-[#E5E5E5] rounded w-full mb-4"
               placeholder="Your Password"
             />
             <div className="flex justify-between">
@@ -84,7 +93,10 @@ const Login = () => {
                   Remember me
                 </label>
               </div>
-              <Link to="/forget-password" className="font-medium text-[#B6B6B6]">
+              <Link
+                to="/forget-password"
+                className="font-medium text-[#B6B6B6]"
+              >
                 Forget Password
               </Link>
             </div>
@@ -97,18 +109,7 @@ const Login = () => {
                 Login
               </span>
             </button>
-            <button className=" bg-[#FFFFFF] w-full py-3 rounded-md  shadow-lg border text-[#7E7E7E] mt-6 translate-y-0 hover:-translate-y-1 duration-300">
-              {" "}
-              <span className="flex items-center gap-4 justify-center">
-                {" "}
-                <img
-                  className="w-8 h-8"
-                  src="https://img.icons8.com/fluency/2x/google-logo.png"
-                  alt=""
-                />{" "}
-                Continue with Google
-              </span>
-            </button>
+            <GoogleLogin />
           </form>
         </div>
       </div>

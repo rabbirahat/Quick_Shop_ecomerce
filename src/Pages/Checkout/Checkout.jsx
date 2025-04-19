@@ -9,7 +9,7 @@ import useAuth from '../../Hook/useAuth';
 
 const Checkout = () => {
   const { register, handleSubmit, reset } = useForm();
-  const [cartData, refetch] = useCart();
+  const [cartData, refetch, isLoading] = useCart();
   const axiosSecure = useAxiosSecure();
   const { user } = useAuth(); 
   const cartItems = cartData?.cart || [];
@@ -56,7 +56,8 @@ const Checkout = () => {
     const total = subtotal - discountAmount;
 
     const order = {
-      userEmail: data.email,
+      email: data.email,
+      userEmail: user?.email ,
       name: `${data.firstName} ${data.lastName}`,
       phone: data.phone,
       address: {
@@ -89,6 +90,9 @@ const Checkout = () => {
     }
   };
 
+  if (isLoading) {
+    return <div className="loader">Loading...</div>;
+  }
   return (
     <div className="px-5 mt-10">
       <h2 className="heading-2 text-textHeading">Checkout</h2>

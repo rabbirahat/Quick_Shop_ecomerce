@@ -6,7 +6,7 @@ import useAuth from "../../../Hook/useAuth";
 import { Link } from "react-router-dom";
 
 const CartSummary = () => {
-  const [cartData, refetch] = useCart();
+  const [cartData, refetch, isLoading] = useCart();
   const axiosSecure = useAxiosSecure();
   const { user } = useAuth();
 
@@ -47,6 +47,14 @@ const CartSummary = () => {
       });
     }
   };
+
+  if (isLoading) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <div className="loader"></div>
+      </div>
+    );
+  }
 
   return (
     <div className="border border-gray-300 text-gray-500 rounded p-5">

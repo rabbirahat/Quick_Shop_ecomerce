@@ -10,14 +10,20 @@ import About from "../Pages/About/About";
 import Login from "../Pages/Login/Login";
 import Signup from "../Pages/Signup/Signup";
 import Menu from "../Pages/Menu/Menu";
-import Dashboard from "../Pages/Dashboard/Dashboard";
-import TrackYourOrder from "../Pages/Dashboard/TrackYourOrder";
 import MyAddress from "../Pages/Dashboard/MyAddress";
-import MyOrders from "../Pages/Dashboard/MyOrders";
-import AccountDetails from "../Pages/Dashboard/AccountDetails";
-import ProductDetails from "../Pages/ProductDetails/ProductDetails";
 import ForgetPassword from "../Pages/ForgetPassword/ForgetPassword";
 import PrivateRoute from "./PrivateRoute";
+import Dashboard from "../Pages/Dashboard/Dashboard";
+import MyOrders from "../Pages/Dashboard/Privateuser/MyOrders";
+import AccountDetails from "../Pages/Dashboard/AccountDetails";
+import ProductDetails from "../Pages/ProductDetails/ProductDetails";
+import TrackYourOrder from "../Pages/Dashboard/Privateuser/TrackYourOrder";
+import AllUsers from "../Pages/Dashboard/Admin/AllUsers";
+import AdminRoute from "./AdminRoute";
+import ManageOrders from "../Pages/Dashboard/Admin/ManageOrders";
+import AddProduct from "../Pages/Dashboard/Admin/AddProduct/AddProduct";
+import AllProducts from "../Pages/Dashboard/Admin/AllProducts/AllProducts";
+import EditProduct from "../Pages/Dashboard/Admin/AllProducts/EditProduct";
 
 export const router = createBrowserRouter([
   {
@@ -62,15 +68,27 @@ export const router = createBrowserRouter([
       },
       {
         path: "/cart",
-        element: <PrivateRoute><MyCart /></PrivateRoute>,
+        element: (
+          <PrivateRoute>
+            <MyCart />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/checkout",
-        element: <PrivateRoute><Checkout /></PrivateRoute> ,
+        element: (
+          <PrivateRoute>
+            <Checkout />
+          </PrivateRoute>
+        ),
       },
       {
-        path: "/dashboard",
-        element:  <PrivateRoute><Dashboard /></PrivateRoute>,
+        path: "dashboard",
+        element: (
+          <PrivateRoute>
+            <Dashboard />
+          </PrivateRoute>
+        ),
         children: [
           {
             path: "trackorder",
@@ -81,12 +99,53 @@ export const router = createBrowserRouter([
             element: <MyAddress />,
           },
           {
-            path: "myorders",
+            path: "orders",
             element: <MyOrders />,
           },
           {
             path: "accountdetails",
             element: <AccountDetails />,
+          },
+          //----admin routes-----//
+          {
+            path: "/dashboard/edit-product/:id",
+            element: (
+              <AdminRoute>
+                <EditProduct />,
+              </AdminRoute>
+            ),
+          },
+          {
+            path: "allproduct",
+            element: (
+              <AdminRoute>
+                <AllProducts />
+              </AdminRoute>
+            ),
+          },
+          {
+            path: "addproduct",
+            element: (
+              <AdminRoute>
+                <AddProduct />
+              </AdminRoute>
+            ),
+          },
+          {
+            path: "allusers",
+            element: (
+              <AdminRoute>
+                <AllUsers />
+              </AdminRoute>
+            ),
+          },
+          {
+            path: "manageorders",
+            element: (
+              <AdminRoute>
+                <ManageOrders />
+              </AdminRoute>
+            ),
           },
         ],
       },

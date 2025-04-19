@@ -8,7 +8,7 @@ const ApplyCoupon = () => {
   const [coupon, setCoupon] = useState("");
   const axiosSecure = useAxiosSecure();
   const { user } = useAuth();
-  const [, refetch] = useCart();
+  const [, refetch,isLoading] = useCart();
 
   const applyCoupon = async () => {
     if (!coupon) {
@@ -45,6 +45,14 @@ const ApplyCoupon = () => {
       });
     }
   };
+
+if (isLoading) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <div className="loader"></div>
+      </div>
+    );
+  }
 
   return (
     <div className="border border-gray-300 rounded p-5">

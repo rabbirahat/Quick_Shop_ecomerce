@@ -1,15 +1,12 @@
 import { useContext, useState } from "react";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import { BiMessageSquareDetail } from "react-icons/bi";
 import { BsHeart } from "react-icons/bs";
-import { FiLogOut, FiUser } from "react-icons/fi";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { GoLocation } from "react-icons/go";
-import { RiArrowDropDownLine, RiListSettingsFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import logo from "../../assets/QS_LOGO.png";
 import { AuthContext } from "../../Providers/AuthProvider";
 import useCart from "../../Hook/useCarts.jsx";
+import AccountDropdown from "./AccountDropdown.jsx";
 
 // Navigation Links
 const navLinks = [
@@ -21,21 +18,12 @@ const navLinks = [
   { path: "/login", label: "Login" },
 ];
 
-// Account Dropdown Links
-const accountLinks = [
-  { path: "/dashboard", label: "My Account", icon: <FiUser /> },
-  { path: "/order-tracking", label: "Order Tracking", icon: <GoLocation /> },
-  { path: "/my-voucher", label: "My Voucher", icon: <BiMessageSquareDetail /> },
-  { path: "/settings", label: "Settings", icon: <RiListSettingsFill /> },
-];
-
 const NavMenu = ({ links, onClick }) => {
   const { user, logOut } = useContext(AuthContext);
 
   return (
     <div className="flex flex-col gap-2">
       {links.map((link, index) => {
-        // Hide Login if user is logged in
         if (user?.email && link.path === "/login") return null;
 
         return (
@@ -62,49 +50,9 @@ const NavMenu = ({ links, onClick }) => {
   );
 };
 
-const AccountDropdown = () => {
-  const { logOut, user } = useContext(AuthContext);
-  return (
-    <div className="relative group cursor-pointer">
-      <div className="flex items-center font-medium whitespace-nowrap">
-        Account <RiArrowDropDownLine className="w-6 h-6" />
-      </div>
-
-      <ul className="absolute hidden group-hover:block bg-base-100 rounded-box z-10 w-52 p-2 shadow-sm top-full ">
-        {user?.email ? (
-          <>
-            {accountLinks.map((item, index) => (
-              <Link
-                key={index}
-                to={item.path}
-                className="flex gap-2 items-center ml-4 mt-2 hover:text-success"
-              >
-                {item.icon} <h1>{item.label}</h1>
-              </Link>
-            ))}
-            <button
-              onClick={logOut}
-              className="flex gap-2 items-center ml-4 mt-2 hover:text-success w-full text-left"
-            >
-              <FiLogOut /> <h1>Sign Out</h1>
-            </button>
-          </>
-        ) : (
-          <Link
-            to="/login"
-            className="flex gap-2 items-center ml-4 mt-2 hover:text-success"
-          >
-            <FiUser /> <h1>Login</h1>
-          </Link>
-        )}
-      </ul>
-    </div>
-  );
-};
-
 const CartWishlistIcons = () => {
   const { user } = useContext(AuthContext);
-  const [{cart}] = useCart();
+  const [{ cart }] = useCart();
   return (
     <ul className="flex font-lato items-center justify-between gap-5 font-base font-medium mr-5">
       <li>
@@ -176,7 +124,9 @@ const MobileNav = ({ isOpen, setIsOpen }) => (
         className="cursor-pointer w-16"
         onClick={() => setIsOpen(!isOpen)}
       />
-      <img className="h-[62.17px]" src={logo} alt="logo" />
+      <Link to={"/"} >
+        <img className="h-[62.17px]" src={logo} alt="logo" />
+      </Link>
       <CartWishlistIcons />
     </div>
 
@@ -208,7 +158,9 @@ const MobileNav = ({ isOpen, setIsOpen }) => (
 const DesktopNav = () => (
   <div className="hidden lg:block">
     <div className="h-[128px] flex items-center justify-between">
+      <Link to={"/"} >
       <img className="h-[62.17px]" src={logo} alt="logo" />
+      </Link>
       <SearchBar />
       <div className="flex gap-5 items-center">
         <AccountDropdown />
